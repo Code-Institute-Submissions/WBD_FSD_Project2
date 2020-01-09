@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="row no-gutters">
-                    <div id="app col text-color-section section-text text-center section-heading">
+                    <div id="app"> <!-- col text-color-section section-text text-center section-heading -->
                         <ul>
                             <li v-for="item in items">
                                 <h3><a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a></h3>
@@ -104,7 +104,7 @@
                                 <hr/>
                             </li>
                             
-                            <table border=1px>
+                            <table border="1px solid">
                                 <tr>
                                     <th><strong>Title</strong></th>
                                     <th><strong>Author</strong></th>
@@ -196,7 +196,7 @@
             </div>
         </div>
     </footer>
-	<script type="text/javascript" src="https://unpkg.com/vue"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> . <!-- dev version: https://unpkg.com/vue -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
 	<!-- Vue/Axios JS code & HTML adapted from article at https://medium.com/row-and-table/an-basic-intro-to-the-airtable-api-9ef978bb0729 -->
 	<script type="text/javascript">
