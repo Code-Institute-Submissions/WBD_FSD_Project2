@@ -87,8 +87,8 @@
                         <hr class="block-divider">
                          Display books as: &nbsp; &nbsp; 
                          <form>
-                            <input type="radio" name="display" value="list" checked autofocus> List  &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="table"> Table
+                            <input type="radio" name="display" value="list"  onchange="displayBooks('list');"  checked autofocus > List  &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="table" onchange="displayBooks('table');" > Table
                         </form>
                         <hr class="block-divider">
                     </div>
@@ -251,5 +251,10 @@
 		}
 	    })
 	</script>
+    <script type="text/javascript">
+        function displayBooks(choice) {
+            console.log('in displayBooks:' + choice );
+        }
+    </script>
 </body>
 </html>
