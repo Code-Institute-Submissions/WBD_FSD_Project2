@@ -83,65 +83,45 @@
                 <div class="row no-gutters">
                     <div class="col text-color-section section-text text-center section-heading">
                         <hr class="block-divider">
-                        <h3 class="section-heading uppercase">PEN BOOKS</h3>
+                        <h3 class="section-heading uppercase">PEN EVENTS</h3>
                         <hr class="block-divider">
                          <form>
-                         Display books as a : &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="list"  onchange="displayBooks('list');"  checked autofocus > List  &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="table" onchange="displayBooks('table');" > Table
+                         Display events as a : &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="list"  onchange="displayEvents('list');" > List  &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="table" onchange="displayEvents('table');" checked > Table
                         </form>
                         <hr class="block-divider">
                     </div>
                 </div>
                 <div class="row no-gutters">
                     <div id="app" class="col text-color-section">  <!-- col text-color-section section-text text-center section-heading -->
-                        <ul>
-                            <li v-for="item in items">
-                                <h3><a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a></h3>
-                                <p><strong>Author: </strong>{{ item['fields']['Author'] }}</p>
-                                <p><strong>Publisher: </strong>{{ item['fields']['Publisher'] }}</p>
-                                <p><strong>ISBN: </strong>{{ item['fields']['ISBN'] }}</p>
-                                <p><strong>Cover Price: </strong>${{ item['fields']['SuggestedRetailPrice'] }}</p>
-                                <p><strong>Edition: </strong>{{ item['fields']['Edition'] }}</p>
-                                <p><strong>Publication Date: </strong>{{ item['fields']['PublicationDate'] }}</p>
-                                <p><strong>Web site: </strong><a :href="item['fields']['Website']">{{ item['fields']['Website'] }}</a></p>
-                                <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
-                                <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
-                                <hr/>
-                            </li>
-                            
-                            <table id="book-table" class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
+                        <ul>                            
+                            <table id="event-table" class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
                                 <thead>
                                     <tr class="text-center">
-                                        <th scope="col"><strong>Title</strong></th>
-                                        <th scope="col"><strong>Author</strong></th>
-                                        <th scope="col"><strong>Publisher</strong></th>
-                                        <th scope="col"><strong>ISBN</strong></th>
-                                        <th scope="col"><strong>Cover Price</strong></th>
-                                        <th scope="col"><strong>Edition</strong></th>
-                                        <th scope="col"><strong>Publication Date</strong></th>
-                                        <!-- 
-                                        <th scope="col"><strong>Website</strong></th>
-                                        <th scope="col"><strong>Notes</strong></th>
-                                        -->
+                                        <th scope="col"><strong>Date</strong></th>
+                                        <th scope="col"><strong>Time</strong></th>
+                                        <th scope="col"><strong>What</strong></th>
+                                        <th scope="col"><strong>Topic</strong></th>
+                                        <th scope="col"><strong>Location</strong></th>
+                                        <th scope="col"><strong>Frequency</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="item in items">
-                                        <th scope="row"><strong> <a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a> </strong></td>
-                                        <td> {{ item['fields']['Author'] }} </td>
-                                        <td> {{ item['fields']['Publisher'] }} </td>
-                                        <td> {{ item['fields']['ISBN'] }} </td>
-                                        <td> {{ item['fields']['SuggestedRetailPrice'] }} </td>
-                                        <td> {{ item['fields']['Edition'] }} </td>
-                                        <td> {{ item['fields']['PublicationDate'] }} </td>
-                                        <!-- 
-                                        <td> <a :href="item['fields']['Website']">{{ item['fields']['Website'] }}</a></td>
-                                        <td> {{ item['fields']['Notes'] }} </td>
-                                        <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  
-                                        -->
+                                        <th scope="row"> {{ item['fields']['DisplayDate'] }} </th>
+                                        <td> {{ item['fields']['StartTime'] }} - {{ item['fields']['EndTime'] }} </td>
+                                        <td><a :href="item['fields']['WhatURL']">  {{ item['fields']['What'] }} </a></td>
+                                        <td> {{ item['fields']['Topic'] }} </td>
+                                        <td><a :href="item['fields']['LocationURL']"> {{ item['fields']['LocationText'] }} </a></td>
+                                        <td> {{ item['fields']['Frequency'] }} </td>
                                     </tr>
                                 </tbody>
+                                <tfoot>
+                                    <tr class="text-center">
+                                        <th scope="col" colspan=6>If no event information appears above, your organization or ISP may be blocking AirTable.com</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </ul>
                         <div class="col text-color-section section-heading section-text">
@@ -230,11 +210,11 @@
 		    loadItems: function(){
 			// Init variables
 			var self = this
-			var app_id = "appGo3vPegP0WBy67";
+			var app_id = "appmmieFZBQVOO2Pf";
 			var app_key = "keyHviR3MF7PMeDg5";
 			this.items = [];
 			axios.get(
-			    "https://api.airtable.com/v0/"+app_id+"/Book?view=Grid%20view",
+			    "https://api.airtable.com/v0/"+app_id+"/Events?view=Grid%20view",
 			    { 
 				headers: { Authorization: "Bearer "+app_key } 
 			    }
@@ -248,7 +228,7 @@
 	    })
 	</script>
     <script type="text/javascript">
-        function displayBooks(choice) {
+        function displayEvents(choice) {
             console.log('in displayBooks:' + choice );
         }
     </script>
