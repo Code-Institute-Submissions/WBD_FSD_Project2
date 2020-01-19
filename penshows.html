@@ -83,9 +83,66 @@
                 <div class="row no-gutters">
                     <div class="col text-color-section section-text text-center section-heading">
                         <hr class="block-divider">
-                        <h3 class="section-heading uppercase">THIS PAGE IS UNDER CONSTRUCTION -- COMING SOON</h3>
+                        <h3 class="section-heading uppercase">PEN BOOKS</h3>
+                        <hr class="block-divider">
+                         <form>
+                         Display shows as a : &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="list"  onchange="showHide('dataList','dataTable');" > List  &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="table" onchange="showHide('dataTable','dataList');" checked autofocus > Table
+                        </form>
                         <hr class="block-divider">
                     </div>
+                </div>
+                <div class="row no-gutters">
+                    <div id="app" class="col text-color-section">  <!-- col text-color-section section-text text-center section-heading -->
+                        <ul id="dataList" style="display: none; ">
+                            <li v-for="item in items">
+                                <h3><a :href="item['fields']['Website']">{{ item['fields']['Name'] }}</a></h3>
+                                <p><strong>Description: </strong>{{ item['fields']['Description'] }}</p>
+                                <p><strong>Start Date: </strong>{{ item['fields']['Start Date'] }}</p>
+                                <p><strong>City: </strong>{{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }}</p>
+                                <p><strong>Country: </strong>{{ item['fields']['Venue Country'] }}</p>
+                                <p><strong>When: </strong>{{ item['fields']['Frequency'] }} - {{ item['fields']['Occurrence'] }}</p>
+                                <p><strong>Publication Date: </strong>{{ item['fields']['PublicationDate'] }}</p>
+                                <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
+                                <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
+                                <hr/>
+                            </li>
+                        </ul>
+                        <table id="dataTable" style="display: block; " class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col"><strong>Start Date</strong></th>
+                                        <th scope="col"><strong>Name</strong></th>
+                                        <th scope="col"><strong>Description</strong></th>
+                                        <th scope="col"><strong>City</strong></th>
+                                        <th scope="col"><strong>Country</strong></th>
+                                        <th scope="col"><strong>When</strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in items">
+                                        <td> {{ item['fields']['Start Date'] }} </td>
+                                        <td> <strong> <a :href="item['fields']['Website']">{{ item['fields']['Name'] }}</a> </strong></td>
+                                        <td> {{ item['fields']['Description'] }} </td>
+                                        <td> {{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }} </td>
+                                        <td> {{ item['fields']['Venue Country'] }} </td>
+                                        <td> {{ item['fields']['Frequency'] }} - {{ item['fields']['Occurrence'] }}  </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="text-center">
+                                        <th scope="col" colspan=7>If no event information appears above, your organization or ISP may be blocking AirTable.com</th>
+                                    </tr>
+                                </tfoot>
+                        </table>
+                        <div class="col text-color-section section-heading section-text">
+                            <hr class="block-divider">
+                            <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>. 
+                             <a href="#">Copy</a> or <a href="#">link</a> to it in your AirTable workspace.</p>
+                             <p>Got a pen book to add to this database? <a href="penbooks_email.html">Let us know!</a></p>
+                        </div>
+                    </div><!--app-->
                 </div>
             </div>
             
@@ -107,12 +164,11 @@
                     <a href="mailto:iowapen@gmail.com?subject=Information on IowaPen requested" target="_blank" class="email-link" alt="Email IowaPen" title="Email IowaPen">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <span class="sr-only">Send Email</span>
-                        </a>
+                    </a>
                     <a href="tel:515-999-0622" target="_blank" class="email-link" alt="Phone IowaPen (6-9pm US CST only!)" title="Phone IowaPen (6-9pm US CST only!)">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <span class="sr-only">Telephone</span>
-                        </a>
-
+                    </a>
             </div>
             <div class="col-sm-4">
                 <h5 class="uppercase footer-title">Social Media</h5>
@@ -121,8 +177,8 @@
                         <a target="_blank" href="https://www.facebook.com/groups/IowaPen/" alt="IowaPen Facebook Group" title="IowaPen Facebook Group">
                                 <i class="fab fa-facebook-f" aria-hidden="true"></i>
                                 <span class="sr-only">Facebook</span>
-                            </a>
-                    </li>
+                        </a>
+                   </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="https://twitter.com/iowapen" alt="IowaPen Twitter feed" title="IowaPen Twitter feed">
                                 <i class="fab fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
@@ -150,6 +206,48 @@
             </div>
         </div>
     </footer>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> <!-- dev version: https://unpkg.com/vue -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+	<!-- Vue/Axios JS code & HTML adapted from article at https://medium.com/row-and-table/an-basic-intro-to-the-airtable-api-9ef978bb0729 -->
+	<script type="text/javascript">
+	    var app = new Vue({
+            el: '#app',
+            data: {
+                items: []
+		    },
+            mounted: function(){
+                this.loadItems(); 
+            },
+            methods: {
+                loadItems: function(){
+                    // Init variables
+                    var self = this
+                    var app_id = "appPK0FIcOMvPVwZv"; //Pen Shows
+                    var app_key = "keyZJuhIFuOIUcEev";
+                    this.items = [];
+                    axios.get(
+                        "https://api.airtable.com/v0/"+app_id+"/Shows?view=AllShows",
+                        { 
+                            headers: { Authorization: "Bearer "+app_key } 
+                        }
+                    ).then(function(response){
+                        self.items = response.data.records
+                    }).catch(function(error){
+                        console.log(error)
+                    })
+                }
+		    }
+	    })
+	</script>
+    <script type="text/javascript">
+        function showHide(divToShow,divToHide) {
+            console.log('in toggleShows: show ' + divToShow + " hide " + divToHide );
+            var ds = document.getElementById(divToShow);
+            var dh = document.getElementById(divToHide);
+            ds.style.display = "block";
+            dh.style.display = "none";
+            return true;
+        }
+    </script>
 </body>
-
 </html>
