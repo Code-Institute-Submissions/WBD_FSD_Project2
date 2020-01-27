@@ -87,15 +87,56 @@
                         <hr class="block-divider">
                          <form>
                          Display books as a : &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="list"  onchange="displayBooks('list');"  checked autofocus > List  &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="table" onchange="displayBooks('table');" > Table
+                            <input type="radio" name="display" value="table" onchange="showHide('dataTable','dataList');" checked autofocus > Table
+                             &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="list"  onchange="showHide('dataList','dataTable');"> List
                         </form>
                         <hr class="block-divider">
                     </div>
                 </div>
                 <div class="row no-gutters">
                     <div id="app" class="col text-color-section">  <!-- col text-color-section section-text text-center section-heading -->
-                        <ul>
+
+                        <table id="dataTable" style="display: block; "class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col"><strong>Title</strong></th>
+                                    <th scope="col"><strong>Author</strong></th>
+                                    <th scope="col"><strong>Publisher</strong></th>
+                                    <th scope="col"><strong>ISBN</strong></th>
+                                    <th scope="col"><strong>Cover Price</strong></th>
+                                    <th scope="col"><strong>Edition</strong></th>
+                                    <th scope="col"><strong>Publication Date</strong></th>
+                                    <!-- 
+                                    <th scope="col"><strong>Website</strong></th>
+                                    <th scope="col"><strong>Notes</strong></th>
+                                    -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in items">
+                                    <th scope="row"><strong> <a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a> </strong></th>
+                                    <td> {{ item['fields']['Author'] }} </td>
+                                    <td> {{ item['fields']['Publisher'] }} </td>
+                                    <td> {{ item['fields']['ISBN'] }} </td>
+                                    <td> {{ item['fields']['SuggestedRetailPrice'] }} </td>
+                                    <td> {{ item['fields']['Edition'] }} </td>
+                                    <td> {{ item['fields']['PublicationDate'] }} </td>
+                                    <!-- 
+                                    <td> <a :href="item['fields']['Website']">{{ item['fields']['Website'] }}</a></td>
+                                    <td> {{ item['fields']['Notes'] }} </td>
+                                    <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  
+                                    -->
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="text-center">
+                                    <th scope="col" colspan=7>If no event information appears above, your organization or ISP may be blocking AirTable.com</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <ul id="dataList" style="display: none; ">
                             <li v-for="item in items">
                                 <h3><a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a></h3>
                                 <p><strong>Author: </strong>{{ item['fields']['Author'] }}</p>
@@ -108,47 +149,9 @@
                                 <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
                                 <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
                                 <hr/>
-                            </li>
-                            
-                            <table id="book-table" class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
-                                <thead>
-                                    <tr class="text-center">
-                                        <th scope="col"><strong>Title</strong></th>
-                                        <th scope="col"><strong>Author</strong></th>
-                                        <th scope="col"><strong>Publisher</strong></th>
-                                        <th scope="col"><strong>ISBN</strong></th>
-                                        <th scope="col"><strong>Cover Price</strong></th>
-                                        <th scope="col"><strong>Edition</strong></th>
-                                        <th scope="col"><strong>Publication Date</strong></th>
-                                        <!-- 
-                                        <th scope="col"><strong>Website</strong></th>
-                                        <th scope="col"><strong>Notes</strong></th>
-                                        -->
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="item in items">
-                                        <th scope="row"><strong> <a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a> </strong></th>
-                                        <td> {{ item['fields']['Author'] }} </td>
-                                        <td> {{ item['fields']['Publisher'] }} </td>
-                                        <td> {{ item['fields']['ISBN'] }} </td>
-                                        <td> {{ item['fields']['SuggestedRetailPrice'] }} </td>
-                                        <td> {{ item['fields']['Edition'] }} </td>
-                                        <td> {{ item['fields']['PublicationDate'] }} </td>
-                                        <!-- 
-                                        <td> <a :href="item['fields']['Website']">{{ item['fields']['Website'] }}</a></td>
-                                        <td> {{ item['fields']['Notes'] }} </td>
-                                        <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  
-                                        -->
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr class="text-center">
-                                        <th scope="col" colspan=7>If no event information appears above, your organization or ISP may be blocking AirTable.com</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                            </li>                            
                         </ul>
+
                         <div class="col text-color-section section-heading section-text">
                             <hr class="block-divider">
                             <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>. 
@@ -255,6 +258,13 @@
     <script type="text/javascript">
         function displayBooks(choice) {
             console.log('in displayBooks:' + choice );
+        }
+    </script>
+    <script type="text/javascript">
+        function showHide(elemToShow,elemToHide) {
+            document.getElementById(elemToShow).style.display = "block";
+            document.getElementById(elemToHide).style.display = "none";
+            return true;
         }
     </script>
 </body>
