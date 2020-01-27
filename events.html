@@ -22,9 +22,9 @@
             </div>
         </div>
     </header>
-
     <section>
         <div class="row no-gutters bg-color-section">
+
             <div class="col col-md-4 bg-color-menu section-column">
                 <div class="row no-gutters bg-color-menu">
                     <ul id="nav" class="list-inline menucontainer">
@@ -79,123 +79,60 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-12 col-md-8">
                 <div class="row no-gutters">
-                    <div class="col text-color-section section-text">
-                        <h2 class="text-center upcoming-events-heading">IOWAPEN EVENTS</h2>
+                    <div class="col text-color-section section-text text-center section-heading">
+                        <hr class="block-divider">
+                        <h3 class="section-heading uppercase">PEN EVENTS</h3>
+                        <hr class="block-divider">
+                         <form>
+                         Display events as a : &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="table" onchange="displayEvents('table');" checked autofocus> Table
+                            &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="list"  onchange="displayEvents('list');" > List  
+                        </form>
+                        <hr class="block-divider">
                     </div>
                 </div>
                 <div class="row no-gutters">
-                    <div class="col text-color-section section-text">
-                        <table class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">What</th>
-                                    <th scope="col">Topic</th>
-                                    <th scope="col">Location</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="text-strikeout">
-                                    <th scope="row">Aug. 14, 2019</th>
-                                    <td>all day</td>
-                                    <td>World Calligraphy Day</td>
-                                    <td>Calligraphy</td>
-                                    <td>Events worldwide</td>
-                                </tr>
-                                <tr class="text-strikeout">
-                                    <th scope="row">Sep. 1, 2019</th>
-                                    <td>all day, annually</td>
-                                    <td><a href="http://www.worldletterwritingday.com">World Letter Writing Day</a></td>
-                                    <td>Write someone a letter!</td>
-                                    <td>Wherever you are!</td>
-                                </tr>
-                                <tr class="text-strikeout">
-                                    <th scope="row">Sep. 1, 2019</th>
-                                    <td>Skipped</td>
-                                    <td>Eastern Iowa Chapter Meeting</td>
-                                    <td>Skipped</td>
-                                    <td>Skipped<br/>Cedar Rapids, IA</td>
-                                </tr>
-                                <th scope="row">Sep. 8, 2019</th>
-                                <td>4:00 - 6:00pm</td>
-                                <td>Central Iowa Chapter Meeting</td>
-                                <td>Non-Pelikan German pens<br /> Fall ink colors<br /> German notebooks/paper
-                                </td>
-                                <td>Cafe Diem<br/>Ankeny IA</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Sep. 8, 2019</th>
-                                    <td>5:00 - 7:00pm</td>
-                                    <td>Midlands Pen Collector's Club</td>
-                                    <td>TBA</td>
-                                    <td>Village Inn Restaurant<br/>Omaha NE</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Sep. 20, 2019</th>
-                                    <td>6:30 - 8:30pm</td>
-                                    <td>Pelikan Hub<br />Des Moines</td>
-                                    <td>Annual pen get-together worldwide, hosted by Pelikan Pens</td>
-                                    <td>Sam & Louie's Pizza<br/>Party Room<br/>86th & Hickman<br/>Urbandale, IA</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Sep. 20, 2019</th>
-                                    <td>6:30 - 8:30pm</td>
-                                    <td>Pelikan Hub<br />Cedar Rapids</td>
-                                    <td>Annual pen get-together worldwide, hosted by Pelikan Pens</td>
-                                    <td>TBA</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Sep. 27-28, 2019</th>
-                                    <td>
-                                        10a-8p Fri<br /> 9a-5p Sat<br />
-                                    </td>
-                                    <td><a href="http://www.dallaspenshow.com/">Dallas Pen Show</a></td>
-                                    <td>Annual pen show hosted by The Dallas Pen Collectors club. 66 vendors! </td>
-                                    <td>Dallas, TX</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Oct. 6, 2019</th>
-                                    <td>TBA</td>
-                                    <td>Eastern Iowa Chapter Meeting</td>
-                                    <td>TBA</td>
-                                    <td>TBA<br/>Cedar Rapids area</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Oct. 13, 2019</th>
-                                    <td>4:00 - 6:00pm</td>
-                                    <td>Central Iowa Chapter Meeting</td>
-                                    <td>TBA</td>
-                                    <td>Cafe Diem<br/>Ankeny IA</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Nov. 1, 2019</th>
-                                    <td>all day, 1st Fri. of Nov. annually</td>
-                                    <td><a href="https://www.fountainpenday.org/">Fountain Pen Day</a></td>
-                                    <td>Celebrate fountain pens!</td>
-                                    <td>Worldwide</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Nov. 3, 2019</th>
-                                    <td>TBA</td>
-                                    <td>Eastern Iowa Chapter Meeting</td>
-                                    <td>TBA</td>
-                                    <td>TBA<br/>Cedar Rapids area</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Nov. 10, 2019</th>
-                                    <td>4:00 - 6:00pm</td>
-                                    <td>Central Iowa Chapter Meeting</td>
-                                    <td>TBA</td>
-                                    <td>Cafe Diem<br/>Ankeny IA</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <div id="app" class="col text-color-section">  <!-- col text-color-section section-text text-center section-heading -->
+                            <table id="event-table" class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col"><strong>Date</strong></th>
+                                        <th scope="col"><strong>Time</strong></th>
+                                        <th scope="col"><strong>What</strong></th>
+                                        <th scope="col"><strong>Topic</strong></th>
+                                        <th scope="col"><strong>Location</strong></th>
+                                        <th scope="col"><strong>Frequency</strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in items">
+                                        <th scope="row"> {{ item['fields']['DisplayDate'] }} </th>
+                                        <td> {{ item['fields']['StartTime'] }} - {{ item['fields']['EndTime'] }} </td>
+                                        <td><a :href="item['fields']['WhatURL']">  {{ item['fields']['What'] }} </a></td>
+                                        <td> {{ item['fields']['Topic'] }} </td>
+                                        <td><a :href="item['fields']['LocationURL']"> {{ item['fields']['LocationText'] }} </a></td>
+                                        <td> {{ item['fields']['Frequency'] }} </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="text-center">
+                                        <th scope="col" colspan=6>If no event information appears above, your organization or ISP may be blocking AirTable.com</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        <div class="col text-color-section section-heading section-text">
+                            <hr class="block-divider">
+                            <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>. 
+                             <a href="#">Copy</a> or <a href="#">link</a> to it in your AirTable workspace.</p>
+                        </div>
+                    </div><!--app-->
                 </div>
             </div>
+            
         </div>
     </section>
 
@@ -257,6 +194,38 @@
             </div>
         </div>
     </footer>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> <!-- dev version: https://unpkg.com/vue -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+	<!-- Vue/Axios JS code & HTML adapted from article at https://medium.com/row-and-table/an-basic-intro-to-the-airtable-api-9ef978bb0729 -->
+	<script type="text/javascript">
+	    var app = new Vue({
+		el: '#app',
+		data: {
+		    items: []
+		},
+		mounted: function(){
+		   this.loadItems(); 
+		},
+		methods: {
+		    loadItems: function(){
+			// Init variables
+			var self = this
+			var app_id = "appmmieFZBQVOO2Pf";
+			var app_key = "keyZJuhIFuOIUcEev";
+			this.items = [];
+			axios.get(
+			    "https://api.airtable.com/v0/"+app_id+"/Events?view=AllEventsFromCurrentDate",
+			    { 
+				headers: { Authorization: "Bearer "+app_key } 
+			    }
+			).then(function(response){
+			    self.items = response.data.records
+			}).catch(function(error){
+			    console.log(error)
+			})
+		    }
+		}
+	    })
+	</script>
 </body>
-
 </html>
