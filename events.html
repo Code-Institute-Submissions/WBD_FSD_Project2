@@ -86,14 +86,7 @@
                         <hr class="block-divider">
                         <h3 class="section-heading uppercase">PEN EVENTS</h3>
                         <hr class="block-divider">
-                         <form>
-                         Display events as a : &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="table" onchange="displayEvents('table');" checked autofocus> Table
-                            &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="list"  onchange="displayEvents('list');" > List  
-                        </form>
-                        <hr class="block-divider">
-                    </div>
+                    </div> 
                 </div>
                 <div class="row no-gutters">
                     <div id="app" class="col text-color-section">  <!-- col text-color-section section-text text-center section-heading -->
@@ -227,5 +220,12 @@
 		}
 	    })
 	</script>
+    <script type="text/javascript">
+        function showHide(elemToShow,elemToHide) {
+            document.getElementById(elemToShow).style.display = "block";
+            document.getElementById(elemToHide).style.display = "none";
+            return true;
+        }
+    </script>
 </body>
 </html>
