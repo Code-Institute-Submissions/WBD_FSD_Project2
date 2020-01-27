@@ -83,12 +83,13 @@
                 <div class="row no-gutters">
                     <div class="col text-color-section section-text text-center section-heading">
                         <hr class="block-divider">
-                        <h3 class="section-heading uppercase">PEN BOOKS</h3>
+                        <h3 class="section-heading uppercase">PEN SHOWS</h3>
                         <hr class="block-divider">
                          <form>
                          Display shows as a : &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="list"  onchange="showHide('dataList','dataTable');" > List  &nbsp; &nbsp; 
                             <input type="radio" name="display" value="table" onchange="showHide('dataTable','dataList');" checked autofocus > Table
+                             &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="list"  onchange="showHide('dataList','dataTable');"> List
                         </form>
                         <hr class="block-divider">
                     </div>
@@ -96,14 +97,14 @@
                 <div class="row no-gutters">
                     <div id="app" class="col text-color-section">  <!-- col text-color-section section-text text-center section-heading -->
                         <ul id="dataList" style="display: none; ">
-                            <li v-for="item in items">
-                                <h3><a :href="item['fields']['Website']">{{ item['fields']['Name'] }}</a></h3>
+                            <li v-for="item in items" v-if="item['fields']['Start Date']">
+                                <h3><a :href="item['fields']['Website']"  target="_blank">{{ item['fields']['Name'] }}</a></h3>
+                                <p></p>
                                 <p><strong>Description: </strong>{{ item['fields']['Description'] }}</p>
-                                <p><strong>Start Date: </strong>{{ item['fields']['Start Date'] }}</p>
-                                <p><strong>City: </strong>{{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }}</p>
+                                <p><strong>Dates: </strong>{{ item['fields']['Dates'] }}</p>
+                                <p><strong>City: </strong>{{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }} {{ item['fields']['Venue Zip Code'] }} </p>
                                 <p><strong>Country: </strong>{{ item['fields']['Venue Country'] }}</p>
                                 <p><strong>When: </strong>{{ item['fields']['Frequency'] }} - {{ item['fields']['Occurrence'] }}</p>
-                                <p><strong>Publication Date: </strong>{{ item['fields']['PublicationDate'] }}</p>
                                 <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
                                 <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
                                 <hr/>
@@ -112,22 +113,18 @@
                         <table id="dataTable" style="display: block; " class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
                                 <thead>
                                     <tr class="text-center">
-                                        <th scope="col"><strong>Start Date</strong></th>
+                                        <th scope="col"><strong>Dates</strong></th>
                                         <th scope="col"><strong>Name</strong></th>
-                                        <th scope="col"><strong>Description</strong></th>
                                         <th scope="col"><strong>City</strong></th>
                                         <th scope="col"><strong>Country</strong></th>
-                                        <th scope="col"><strong>When</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="item in items">
-                                        <td> {{ item['fields']['Start Date'] }} </td>
-                                        <td> <strong> <a :href="item['fields']['Website']">{{ item['fields']['Name'] }}</a> </strong></td>
-                                        <td> {{ item['fields']['Description'] }} </td>
+                                    <tr v-for="item in items" v-if="item['fields']['Start Date']"> <!-- v-if removes any items with no know date yet-->
+                                        <td> {{ item['fields']['Dates'] }} </td>
+                                        <td> <strong> <a :href="item['fields']['Website']" target="_blank">{{ item['fields']['Name'] }}</a> </strong></td>
                                         <td> {{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }} </td>
                                         <td> {{ item['fields']['Venue Country'] }} </td>
-                                        <td> {{ item['fields']['Frequency'] }} - {{ item['fields']['Occurrence'] }}  </td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
@@ -140,7 +137,7 @@
                             <hr class="block-divider">
                             <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>. 
                              <a href="#">Copy</a> or <a href="#">link</a> to it in your AirTable workspace.</p>
-                             <p>Got a pen book to add to this database? <a href="penbooks_email.html">Let us know!</a></p>
+                             <p>Got a pen show to add to this database? <a href="penshows_email.html">Let us know!</a></p>
                         </div>
                     </div><!--app-->
                 </div>
@@ -240,12 +237,9 @@
 	    })
 	</script>
     <script type="text/javascript">
-        function showHide(divToShow,divToHide) {
-            console.log('in toggleShows: show ' + divToShow + " hide " + divToHide );
-            var ds = document.getElementById(divToShow);
-            var dh = document.getElementById(divToHide);
-            ds.style.display = "block";
-            dh.style.display = "none";
+        function showHide(elemToShow,elemToHide) {
+            document.getElementById(elemToShow).style.display = "block";
+            document.getElementById(elemToHide).style.display = "none";
             return true;
         }
     </script>
