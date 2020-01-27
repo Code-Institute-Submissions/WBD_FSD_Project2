@@ -436,6 +436,12 @@ footer {
     font-style: normal;
 }
 
+pre {
+  display: block;
+  font-family: sans-serif;
+  white-space: pre-wrap;
+  margin: 1em 2em;
+} 
 
 
 
