@@ -95,28 +95,15 @@
                     </div>
                 </div>
                 <div class="row no-gutters">
-                    <div id="app" class="col text-color-section" style="padding-left: 10px; padding-right: 10px; ">  <!-- col text-color-section section-text text-center section-heading -->
-                        <ul id="dataList" style="display: none; ">
-                            <li v-for="item in items" v-if="item['fields']['Start Date']">
-                                <h3><a :href="item['fields']['Website']"  target="_blank">{{ item['fields']['Name'] }}</a></h3>
-                                <p></p>
-                                <p><strong>Description: </strong>{{ item['fields']['Description'] }}</p>
-                                <p><strong>Dates: </strong>{{ item['fields']['Dates'] }}</p>
-                                <p><strong>City: </strong>{{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }} {{ item['fields']['Venue Zip Code'] }} </p>
-                                <p><strong>Country: </strong>{{ item['fields']['Venue Country'] }}</p>
-                                <p><strong>When: </strong>{{ item['fields']['Frequency'] }} - {{ item['fields']['Occurrence'] }}</p>
-                                <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
-                                <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
-                                <hr/>
-                            </li>
-                        </ul>
-                        <table id="dataTable" style="display: block; " class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
+                    <div id="app" class="col text-color-section section-text" style="padding-left: 10px; padding-right: 10px; ">  <!-- col text-color-section section-text text-center section-heading -->
+                        <table id="dataTable" class="table-responsive-sm table-striped table-bordered table-hover mx-auto" >
                                 <thead>
                                     <tr class="text-center">
                                         <th scope="col"><strong>Dates</strong></th>
                                         <th scope="col"><strong>Name</strong></th>
                                         <th scope="col"><strong>City</strong></th>
                                         <th scope="col"><strong>Country</strong></th>
+                                        <th scope="col"><strong>Frequency</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -125,6 +112,7 @@
                                         <td> <strong> <a :href="item['fields']['Website']" target="_blank">{{ item['fields']['Name'] }}</a> </strong></td>
                                         <td> {{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }} </td>
                                         <td> {{ item['fields']['Venue Country'] }} </td>
+                                        <td> {{ item['fields']['Frequency'] }} {{ item['fields']['Occurrence'] }}</td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
@@ -139,6 +127,20 @@
                              <a href="#">Copy</a> or <a href="#">link</a> to it in your AirTable workspace.</p>
                              <p>Got a pen show to add to this database? <a href="penshows_email.html">Let us know!</a></p>
                         </div>
+                        <ul id="dataList" style="display: none; ">
+                            <li v-for="item in items" v-if="item['fields']['Start Date']">
+                                <h3><a :href="item['fields']['Website']"  target="_blank">{{ item['fields']['Name'] }}</a></h3>
+                                <p></p>
+                                <p><strong>Description: </strong>{{ item['fields']['Description'] }}</p>
+                                <p><strong>Dates: </strong>{{ item['fields']['Dates'] }}</p>
+                                <p><strong>City: </strong>{{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }} {{ item['fields']['Venue Zip Code'] }} </p>
+                                <p><strong>Country: </strong>{{ item['fields']['Venue Country'] }}</p>
+                                <p><strong>When: </strong>{{ item['fields']['Frequency'] }} - {{ item['fields']['Occurrence'] }}</p>
+                                <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
+                                <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
+                                <hr/>
+                            </li>
+                        </ul>
                     </div><!--app-->
                 </div>
             </div>
