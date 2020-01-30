@@ -10,9 +10,9 @@ function initMap() {
     var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
  
     var locations = [
-        { lat: 41.72666667, lng: -93.60416667 },    //Ankeny, Cafe Diém
-        { lat: 41.880265,   lng: -93.68166667 },    //Slater, IA
-        { lat: 41.604722,   lng: --93.711111  }     //Windsor Height, IA
+        { lat: 41.72666667, lng: -93.60416667 },   
+        { lat: 41.880265,   lng: -93.68166667 },   
+        { lat: 41.604722,   lng: -93.711111  }    
     ];
  
     var markers = locations.map(function(location, i) {
