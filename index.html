@@ -81,13 +81,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-8 text-color-section section-column section-content">
-                    <div class="row ">
-                        <div class="col ">
-                            <h3 class="section-heading uppercase">About IowaPen</h3>
-                            <hr class="block-divider">
-                        </div>
-                    </div>
+                <div class="col-md-8 text-color-section section-column section-content" style="padding-left: 10px; padding-right: 10px; ">
                     <div class="row section-text">
                         <div class="col-10 offset-1 offset-sm-0 col-sm-4 col-md-6">
                             <div class="row">
@@ -141,12 +135,12 @@
                     <div id="blogentries" class="col text-color-section"> 
                         <ul id="dataList">
                             <li v-for="item in items">
-                                <h4>{{ item['fields']['Title'] }}</a></h4>
-                                <p align=right>
+                                <h4 class="blog-heading">{{ item['fields']['Title'] }}</a></h4>
+                                <p  style="text-align: right; ">
                                     <span class="author">  written by  {{ item['fields']['Author'] }}</span>
                                     <span class="date"> - </strong>{{ item['fields']['FormattedDate'] }}</span>&nbsp;&nbsp;
                                 </p>
-                                <pre>{{ item['fields']['Body'] }}</pre>
+                                <pre class="blog-body">{{ item['fields']['Body'] }}</pre>
                                 <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150">
                                 <hr/>
                             </li>                            
@@ -162,9 +156,8 @@
                     </div>
 
                     <div class="row no-gutters">
-                        <div id="eventlist" class="col text-color-section">  
-                            <ul>                            
-                                <table id="event-table" class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
+                        <div id="eventlist" class="col text-color-section" style="padding-left: 10px; padding-right: 10px; ">  
+                                <table id="event-table" class="table-responsive-sm table-striped table-bordered table-hover mx-auto" >
                                     <thead>
                                         <tr class="text-center">
                                             <th scope="col"><strong>Date</strong></th>
@@ -191,7 +184,6 @@
                                         </tr>
                                     </tfoot>
                                 </table>
-                            </ul>
                             <p class="text-center">For many more pen events in the coming months, visit our <a href="events.html">Events</a> page</p>
                         </div><!--eventlist-->
                     </div>
