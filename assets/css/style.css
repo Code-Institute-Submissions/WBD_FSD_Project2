@@ -391,9 +391,15 @@ footer {
 
 #footer-details {
     padding: 20px;
-
 }
 
+div#copyright {
+    color: #cbc5ad;
+}
+
+div#copyright a { 
+    color: orange;
+}
 
 
 /* Join-Form----------------------------------------  */
