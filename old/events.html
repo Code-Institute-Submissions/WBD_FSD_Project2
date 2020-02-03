@@ -24,6 +24,7 @@
     </header>
     <section>
         <div class="row no-gutters bg-color-section">
+
             <div class="col col-md-4 bg-color-menu section-column">
                 <div class="row no-gutters bg-color-menu">
                     <ul id="nav" class="list-inline menucontainer">
@@ -82,61 +83,40 @@
             <div class="col-12 col-md-8">
                 <div class="row no-gutters">
                     <div class="col text-color-section section-text text-center section-heading">
-                        <hr class="block-divider">
-                        <h3 class="section-heading uppercase">PEN SHOWS</h3>
-                        <hr class="block-divider">
-                         <form>
-                         Display shows as a : &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="table" onchange="showHide('dataTable','dataList');" checked autofocus > Table
-                             &nbsp; &nbsp; 
-                            <input type="radio" name="display" value="list"  onchange="showHide('dataList','dataTable');"> List
-                        </form>
-                        <hr class="block-divider">
-                    </div>
+                        <h3 class="section-heading uppercase">PEN EVENTS</h3>
+                    </div> 
                 </div>
                 <div class="row no-gutters">
-                    <div id="app" class="col text-color-section section-text" style="padding-left: 10px; padding-right: 10px; ">  <!-- col text-color-section section-text text-center section-heading -->
-                        <table id="dataTable" class="table-responsive-sm table-striped table-bordered table-hover mx-auto" >
-                            <thead>
-                                <tr class="text-center">
-                                    <th scope="col"><strong>Dates</strong></th>
-                                    <th scope="col"><strong>Name</strong></th>
-                                    <th scope="col"><strong>City</strong></th>
-                                    <th scope="col"><strong>Country</strong></th>
-                                    <th scope="col"><strong>Frequency</strong></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="item in items" v-if="item['fields']['Start Date']"> <!-- v-if removes any items with no know date yet-->
-                                    <td> {{ item['fields']['Dates'] }} </td>
-                                    <td> <strong> <a :href="item['fields']['Website']" target="_blank">{{ item['fields']['Name'] }}</a> </strong></td>
-                                    <td> {{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }} </td>
-                                    <td> {{ item['fields']['Venue Country'] }} </td>
-                                    <td> {{ item['fields']['Frequency'] }} {{ item['fields']['Occurrence'] }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <ul id="dataList" style="display: none; ">
-                            <li v-for="item in items" v-if="item['fields']['Start Date']">
-                                <h3><a :href="item['fields']['Website']"  target="_blank">{{ item['fields']['Name'] }}</a></h3>
-                                <p></p>
-                                <p><strong>Description: </strong>{{ item['fields']['Description'] }}</p>
-                                <p><strong>Dates: </strong>{{ item['fields']['Dates'] }}</p>
-                                <p><strong>City: </strong>{{ item['fields']['Venue City'] }}, {{ item['fields']['Venue State'] }} {{ item['fields']['Venue Zip Code'] }} </p>
-                                <p><strong>Country: </strong>{{ item['fields']['Venue Country'] }}</p>
-                                <p><strong>When: </strong>{{ item['fields']['Frequency'] }} - {{ item['fields']['Occurrence'] }}</p>
-                                <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
-                                <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
-                                <hr/>
-                            </li>
-                        </ul>
+                    <div id="app" class="col text-color-section" style="padding-left: 10px; padding-right: 10px; "> 
+                            <table id="event-table" class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col"><strong>Date</strong></th>
+                                        <th scope="col"><strong>Time</strong></th>
+                                        <th scope="col"><strong>What</strong></th>
+                                        <th scope="col"><strong>Topic</strong></th>
+                                        <th scope="col"><strong>Location</strong></th>
+                                        <th scope="col"><strong>Frequency</strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in items">
+                                        <th scope="row"> {{ item['fields']['DisplayDate'] }} </th>
+                                        <td> {{ item['fields']['StartTime'] }} - {{ item['fields']['EndTime'] }} </td>
+                                        <td><a :href="item['fields']['WhatURL']">  {{ item['fields']['What'] }} </a></td>
+                                        <td> {{ item['fields']['Topic'] }} </td>
+                                        <td><a :href="item['fields']['LocationURL']"> {{ item['fields']['LocationText'] }} </a></td>
+                                        <td> {{ item['fields']['Frequency'] }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         <div class="col text-color-section section-heading section-text">
                             <p>If no event information appears above, your organization or ISP may be blocking AirTable.com</p>
                             <hr class="block-divider">
                             <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>.<br/>
                                If you wish you can <a href="#">copy</a> or <a href="#">link</a> to the database in your personal AirTable workspace.</p>
                             <hr class="block-divider">
-                            <p>Do you have a pen show to add or a correction to make to this pen show database? <br/><a href="penshows_email.html">Let us know!</a></p>
+                            <p>Do you have a pen event to add or a correction to make to this pen event database? <br/><a href="penevents_email.html">Let us know!</a></p>
                         </div>
                     </div><!--app-->
                 </div>
@@ -160,11 +140,12 @@
                     <a href="mailto:iowapen@gmail.com?subject=Information on IowaPen requested" target="_blank" class="email-link" alt="Email IowaPen" title="Email IowaPen">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <span class="sr-only">Send Email</span>
-                    </a>
+                        </a>
                     <a href="tel:515-999-0622" target="_blank" class="email-link" alt="Phone IowaPen (6-9pm US CST only!)" title="Phone IowaPen (6-9pm US CST only!)">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <span class="sr-only">Telephone</span>
-                    </a>
+                        </a>
+
             </div>
             <div class="col-sm-4">
                 <h5 class="uppercase footer-title">Social Media</h5>
@@ -173,8 +154,8 @@
                         <a target="_blank" href="https://www.facebook.com/groups/IowaPen/" alt="IowaPen Facebook Group" title="IowaPen Facebook Group">
                                 <i class="fab fa-facebook-f" aria-hidden="true"></i>
                                 <span class="sr-only">Facebook</span>
-                        </a>
-                   </li>
+                            </a>
+                    </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="https://twitter.com/iowapen" alt="IowaPen Twitter feed" title="IowaPen Twitter feed">
                                 <i class="fab fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
@@ -207,32 +188,32 @@
 	<!-- Vue/Axios JS code & HTML adapted from article at https://medium.com/row-and-table/an-basic-intro-to-the-airtable-api-9ef978bb0729 -->
 	<script type="text/javascript">
 	    var app = new Vue({
-            el: '#app',
-            data: {
-                items: []
-		    },
-            mounted: function(){
-                this.loadItems(); 
-            },
-            methods: {
-                loadItems: function(){
-                    // Init variables
-                    var self = this
-                    var app_id = "appPK0FIcOMvPVwZv"; //Pen Shows
-                    var app_key = "keyZJuhIFuOIUcEev";
-                    this.items = [];
-                    axios.get(
-                        "https://api.airtable.com/v0/"+app_id+"/Shows?view=AllShows",
-                        { 
-                            headers: { Authorization: "Bearer "+app_key } 
-                        }
-                    ).then(function(response){
-                        self.items = response.data.records
-                    }).catch(function(error){
-                        console.log(error)
-                    })
-                }
+		el: '#app',
+		data: {
+		    items: []
+		},
+		mounted: function(){
+		   this.loadItems(); 
+		},
+		methods: {
+		    loadItems: function(){
+			// Init variables
+			var self = this
+			var app_id = "appmmieFZBQVOO2Pf";
+			var app_key = "keyZJuhIFuOIUcEev";
+			this.items = [];
+			axios.get(
+			    "https://api.airtable.com/v0/"+app_id+"/Events?view=AllEventsFromCurrentDate",
+			    { 
+				headers: { Authorization: "Bearer "+app_key } 
+			    }
+			).then(function(response){
+			    self.items = response.data.records
+			}).catch(function(error){
+			    console.log(error)
+			})
 		    }
+		}
 	    })
 	</script>
     <script type="text/javascript">
