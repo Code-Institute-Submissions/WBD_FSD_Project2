@@ -1,0 +1,35 @@
+MILESTONE PROJECT 2 (and beyond) TASKS
+
+[ ] Finish club email contact page by linking to EmailJS
+
+[ ] Create club members maps using data from question on FB etc; have an Iowa Map (and part of surrounding states), USA map, and World map
+[ ] Move club member map data into AirTable database table and read it from there, so we can add easily w/o code changes.
+
+[x] Switch Vue to production mode from development mode https://vuejs.org/guide/deployment.html
+[x] Share the database READ-ONLY with an 'IowaPenReadOnly" AirTable account amd use the app_id and app_key from IowaPenReadOnly to make sure this can't be modified (for now)
+[x] Make the data into a table and use the same Bootstrap table styling we use for other tables on the IowaPen site
+
+[x] Having the data in a more readable checklist form WITH A CHECKBOX VISIBLE AND ON/OFF might be nice too.
+[ ] Put links to AirTable and a way for them to copy the table to their AirTable account for their own use.
+
+[x] Create a database for club and pen events and display THAT from a table too.
+[ ] Add an Email form to submit a new book for the Pen Books page.  Dupe it for future pages. Use EmailJS to mail
+
+[ ] Other tables to create:
+    [ ] Pen Magazines (PenWorld, FP Journal, PENnant, Pen Middle East, etc) 
+    [ ] Pen Shows (only 16 or so in USA, add UK, Italy, India, etc later
+    [ ] Simple Blog
+    [ ] Pen Societies (Pen Collectors of America, UK Writing Equipment Society, India?)
+    [ ] Pen Clubs
+    [ ] Pen Stores (onliine and phyiscal or both)
+    [ ] Pen Repair and Restoration companies
+    [ ] Pen Companies
+    [ ] Ink Companies
+    [ ] Pen web sites
+    [ ] Pen Quotes
+    [ ] Pen Haiku
+    [ ] Pen models
+    [ ] Inks
+    [ ] Ink Makers
+    [ ] Pen Terms
+

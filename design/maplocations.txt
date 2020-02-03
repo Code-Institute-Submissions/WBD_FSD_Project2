@@ -1,0 +1,78 @@
+Google Maps API
+
+API Key:  AIzaSyA7lSkFqyKfXU2o7FSac_Zbf5BwbU22mAw
+
+Or AIzaSyCfIKVFqx0qoB7wH9aQYTO4h9BcBD4u7A8
+
+
+Project name: iowapen
+
+
+Convert lat & long to decimal degrees latlong at:
+
+https://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees
+
+
+Larry Blankenship Webster City, IA
+Matt Neenan Marion, IA
+James Burt Granger, IA
+Maggie Barbour Slater, IA
+Bill Morgan Cedar Falls, IA
+Judith Burgin West Point, IA
+Brian Binger Ames, IA
+Sam Fiorella Kingman AZ
+Bill Peake Buffalo Center, IA
+Nancy Rudy West Des Moines IA
+Dan Solomon Boone, IA
+Amanda Stiver Erickson Cleveland, OH
+Ellen Strittmatter Monticello, IA
+Howard Macrae Henrico (Richmond), VA
+Adam Benway Columbus, OH
+Rebecca Briggs Cedar Rapids, IA
+John Stimson Fairfield, IA
+Eric Ewing Carlisle, IA
+M.e. Thomson Montgomery City, MO
+Krista Reck Urbandale, IA
+Xavier Romano Cedar Rapids, IA
+Howard Macrae Richmond, Virginia.
+Beverly Parkey Dallas Texas
+
+
+City,State,DecLat,DecLong,Count,PlusCode,PlusLocation,PlusState,LatText,LongText,LatitudeLongitute
+Ames,IA,42.03472222,-93.62000000,1,42°02′05″N 93°37′12″W
+Ankeny,IA,41.72666667,-93.60416667,2,PC52+R4,Ankeny,Crocker Township,IA,"41°43′36″N 93°36′15″W"
+Boone,IA,42.061111, -93.886111,1
+Buffalo Center,IA,43.386497, -93.948241,1
+Carlisle,IA,41.501203, -93.490351,1
+Cedar Falls,IA,42.523520,−92.446402,1
+Cedar Rapids,IA,41.983056, -91.668611,2
+Fairfield,IA,41.007222, -91.965833,1
+Granger,IA,41.761672, -93.823921,1
+Marion,IA,42.037649, −91.592925, 1
+Monticello,IA,42.238759, -91.189067,1
+Slater,IA, 41.880265,93.68166667,1,"41°52′49″N,93°40′54″W,41.880265,-93.681642
+Urbandale,IA,41.636389, -93.736111,1
+Webster City,IA,42.466300, -93.820582,1
+West Des Moines,IA,41.573739,−93.750359,2,H67R+J8 West Des Moines,Bloomfield,IA,41°34′25″N,93°45′1″W,
+West Point,IA,40.717249, -91.451672,2
+Windsor Heights,IA,41.604722,-93.711111,2,H7XR+MP Windsor Heights,Walnut,IA,41°36′17″N,94°42′40″W,
+
+USA (all of the above plus:)
+
+Kingman,AZ,1
+Cleveland,OH,1
+Columbus,OH,1
+Henrico (Richmond),VA,1
+Montgomery City, MO,1
+Dallas,TX,1
+
+WORLD: (all of the above plus:)
+
+OTHER KNOWN: 
+
+Nathaniel Harter, Ford Madison, IA, 40.628611, -91.338889, 
+Dan Smith, Davenport, IA, 41.542982, −90.590745
+
+
+[ ] Add fields indicating Iowa-area map, full USA map, full World map
+[ ] Add latitude & longitude fields for each entry, center on city or city hall (see what Google Maps gives you when you look up the city)

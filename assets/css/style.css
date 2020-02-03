@@ -477,7 +477,7 @@ pre {
 
 div#map {
     min-height: 500px; 
-    min-width: 500px; 
+   /*min-width: 300px;  */
 }
 
 /* Dot Grid paper background ----------------------------------------------------------------- */
