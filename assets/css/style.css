@@ -475,7 +475,10 @@ pre {
 }
 /* GOOGLE MAPS API ------------------------------------------------- */
 
-div#map {
+/* You MUST do this to have the map appear on your page! */
+div#map, 
+div#mapUSA, 
+div#MapWorld {
     min-height: 500px; 
    /*min-width: 300px;  */
 }

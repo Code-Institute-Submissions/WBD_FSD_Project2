@@ -59,12 +59,12 @@ Windsor Heights,IA,41.604722,-93.711111,2,H7XR+MP Windsor Heights,Walnut,IA,41°
 
 USA (all of the above plus:)
 
-Kingman,AZ,1
-Cleveland,OH,1
-Columbus,OH,1
-Henrico (Richmond),VA,1
-Montgomery City, MO,1
-Dallas,TX,1
+Kingman,AZ,35.208333, -114.025833,1
+Cleveland,OH,41.482222, -81.669722, 1
+Columbus,OH,39.983333, -82.983333, 1
+Henrico (Richmond),VA, 37.533333, -77.466667, 1
+Montgomery City, MO,38.976812, -91.505026,1
+Dallas,TX, 32.779167, -96.808889, 1
 
 WORLD: (all of the above plus:)
 
