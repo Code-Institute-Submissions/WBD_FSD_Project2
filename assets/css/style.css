@@ -438,6 +438,14 @@ div#copyright a {
     background-color: #6b1919;
 }
 
+.join-form button[type="reset"] {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #fafafa;
+    background-color: gray;
+}
+
+
 /* show required fields in red */
 
 .join-form textarea:required::placeholder,
