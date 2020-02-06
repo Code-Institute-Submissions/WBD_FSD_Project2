@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head class="container-fluid">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+        <script src="https://kit.fontawesome.com/6427ebbfe5.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+        <title>IowaPen</title>
+    </head>
+
+    <body>
+        <header id="header" class="container-fluid">
+        </header>
+
+        <section>
+
+            <div id="section" class="row no-gutters bg-color-section"> <!-- section div row-->
+
+            <div class="col-12 col-md-8">
+                <div class="row no-gutters">
+                    <div class="col text-color-section section-text text-center section-heading">
+                        <h3 class="section-heading uppercase">PEN BOOKS</h3>
+                         <form>
+                         Display books as a : &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="table" onchange="showHide('dataTable','dataList');" checked autofocus > Table
+                             &nbsp; &nbsp; 
+                            <input type="radio" name="display" value="list"  onchange="showHide('dataList','dataTable');"> List
+                        </form>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div id="app" class="col text-color-section" style="padding-left: 10px; padding-right: 10px; ">  <!-- col text-color-section section-text text-center section-heading -->
+
+                        <table id="dataTable" style="display: block; "class="table-responsive-sm table-striped table-bordered table-hover mx-auto">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col"><strong>Title</strong></th>
+                                    <th scope="col"><strong>Author</strong></th>
+                                    <th scope="col"><strong>Publisher</strong></th>
+                                    <th scope="col"><strong>ISBN</strong></th>
+                                    <th scope="col"><strong>Cover Price</strong></th>
+                                    <th scope="col"><strong>Edition</strong></th>
+                                    <th scope="col"><strong>Publication Date</strong></th>
+                                    <!-- 
+                                    <th scope="col"><strong>Website</strong></th>
+                                    <th scope="col"><strong>Notes</strong></th>
+                                    -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in items">
+                                    <th scope="row"><strong> <a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a> </strong></th>
+                                    <td> {{ item['fields']['Author'] }} </td>
+                                    <td> {{ item['fields']['Publisher'] }} </td>
+                                    <td> {{ item['fields']['ISBN'] }} </td>
+                                    <td> {{ item['fields']['SuggestedRetailPrice'] }} </td>
+                                    <td> {{ item['fields']['Edition'] }} </td>
+                                    <td> {{ item['fields']['PublicationDate'] }} </td>
+                                    <!-- 
+                                    <td> <a :href="item['fields']['Website']">{{ item['fields']['Website'] }}</a></td>
+                                    <td> {{ item['fields']['Notes'] }} </td>
+                                    <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  
+                                    -->
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="text-center">
+                                    <th scope="col" colspan=7>If no event information appears above, your organization or ISP may be blocking AirTable.com</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <ul id="dataList" style="display: none; ">
+                            <li v-for="item in items">
+                                <h3><a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a></h3>
+                                <p><strong>Author: </strong>{{ item['fields']['Author'] }}</p>
+                                <p><strong>Publisher: </strong>{{ item['fields']['Publisher'] }}</p>
+                                <p><strong>ISBN: </strong>{{ item['fields']['ISBN'] }}</p>
+                                <p><strong>Cover Price: </strong>${{ item['fields']['SuggestedRetailPrice'] }}</p>
+                                <p><strong>Edition: </strong>{{ item['fields']['Edition'] }}</p>
+                                <p><strong>Publication Date: </strong>{{ item['fields']['PublicationDate'] }}</p>
+                                <p><strong>Web site: </strong><a :href="item['fields']['Website']">{{ item['fields']['Website'] }}</a></p>
+                                <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
+                                <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
+                                <hr/>
+                            </li>                            
+                        </ul>
+
+                        <div class="col text-color-section section-heading section-text">
+                            <hr class="block-divider">
+                            <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>. 
+                             <a href="#">Copy</a> or <a href="#">link</a> to it in your AirTable workspace.</p>
+                             <p>Got a pen book to add to this database? <a href="penbooks_email.html">Let us know!</a></p>
+                        </div>
+                    </div><!--app-->
+                </div>
+            </div>
+
+                <div id="navbuttons" class="col col-md-4 bg-color-menu section-column">
+                </div>
+
+            </div> <!-- section div row -->
+        </section>
+
+        <footer id="footer" class="container-fluid">
+        </footer>
+        
+        <div id="copyright" class="text-center">
+            This website was created by and is copyright &copy; 2016-<script type="text/javascript">document.write( new Date().getFullYear() );</script> 
+            by <a href="http://www.williambdavisjr.com/" target="_blank">Bill Davis</a> - All Rights Reserved.
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script type='text/javascript'>
+            // load page template elements from include_*.html files
+            $(document).ready(function(){
+                $( "#header" ).load( "include_header_flipped.html" );
+                $( "#navbuttons" ).load( "include_section_navbuttons.html" );
+                $( "#footer" ).load( "include_footer.html" );
+            });
+        </script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> <!-- dev version: https://unpkg.com/vue -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+        <!-- Vue/Axios JS code & HTML adapted from article at https://medium.com/row-and-table/an-basic-intro-to-the-airtable-api-9ef978bb0729 -->
+        <script type="text/javascript">
+            var app = new Vue({
+            el: '#app',
+            data: {
+                items: []
+            },
+            mounted: function(){
+            this.loadItems(); 
+            },
+            methods: {
+                loadItems: function(){
+                // Init variables
+                var self = this
+                var app_id = "appGo3vPegP0WBy67";
+                var app_key = "keyZJuhIFuOIUcEev";
+                this.items = [];
+                axios.get(
+                    "https://api.airtable.com/v0/"+app_id+"/Book?view=Grid%20view",
+                    { 
+                    headers: { Authorization: "Bearer "+app_key } 
+                    }
+                ).then(function(response){
+                    self.items = response.data.records
+                }).catch(function(error){
+                    console.log(error)
+                })
+                }
+            }
+            })
+        </script>
+        <script type="text/javascript">
+            function showHide(elemToShow,elemToHide) {
+                document.getElementById(elemToShow).style.display = "block";
+                document.getElementById(elemToHide).style.display = "none";
+                return true;
+            }
+        </script>
+    </body>
+
+</html>
