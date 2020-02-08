@@ -16,21 +16,20 @@ MILESTONE PROJECT 2 (and beyond) TASKS
 [ ] Add an Email form to submit a new book for the Pen Books page.  Dupe it for future pages. Use EmailJS to mail
 
 [ ] Other tables to create:
-    [ ] Pen Magazines (PenWorld, FP Journal, PENnant, Pen Middle East, etc) 
-    [ ] Pen Shows (only 16 or so in USA, add UK, Italy, India, etc later
-    [ ] Simple Blog
+    [x] Pen Magazines (PenWorld, FP Journal, PENnant, Pen Middle East, etc) 
+    [x] Pen Shows (only 16 or so in USA, add UK, Italy, India, etc later
+    [x] Simple Blog
     [ ] Pen Societies (Pen Collectors of America, UK Writing Equipment Society, India?)
-    [ ] Pen Clubs
+    [x] Pen Clubs
+    [x] Pen Sites
+    [x] Pen Terms
     [ ] Pen Stores (onliine and phyiscal or both)
     [ ] Pen Repair and Restoration companies
-    [ ] Pen Companies
-    [ ] Ink Companies
-    [ ] Pen web sites
+    [ ] Pen Companies (Makers)
+    [ ] Ink Companies (Makers)
     [ ] Pen Quotes
     [ ] Pen Haiku
     [ ] Pen models
     [ ] Inks
-    [ ] Ink Makers
-    [ ] Pen Terms
 
-[ ] Export data from databases and archive in GitHub occasionally
+[ ] Export data from databases and archive in GitHub occasionally (CSV? JSON? XML?)

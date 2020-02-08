@@ -12,8 +12,6 @@ TO DO
 
 [x] Create an events page with information about meeting further out, and eventually pen-related events such as Fountain Pen Day, Pelikan Hub, Pen Show dates, and much more (there are a surprising number of National Days and World Days related to writing instruments, writing, etc. 
 
-[ ] Create a contact page with full contact information for the various city chapter coordinator and the group in general. 
-
 [x] Create a chapters page listing the chapters available.  We've gone from one to three in about the same number of years, consider the Omaha-based Midlands Pen Club our "Western" chapter, and are trying to get chapters started in other cities such as near the Sheaffer Pen Museum in Southeast Iowa where there's a large cluster of members who are too far away (2-3 hour drives) to make our current chapter meetings in centeral and eastern Iowa.
 
 [i] Try site on iPhone 1 and iPhone 3gs, original iPad.
@@ -24,23 +22,24 @@ TO DO
 
 Add the following pages as time allows
 
-[i] Resources
-[i] Local Resources
-[ ] Pen Shows
+[x] Pen Shows
+[x] Pen Events (club, show, national or world days)
+[i] Pen Blog (club news, pen news)
+[x] Pen Books
+[ ] Pen Magazines
 [ ] Pen Stores
 [ ] Pen Clubs
-[ ] Pen/Ink/Writing quotes
-[ ] Pen Publications
-
-Eventually add the following pages and more:
-
-[ ] A Writing Instrument blog (or use something like WordPress)
+[i] Pen People
+[i] Pen/Ink/Writing quotes
+[i] Pen Sites (was Resources)
+[ ] Iowa Resources
+[ ] Pen Makers
+[ ] Ink Makers
+[ ] Paper / Notebook Makers
+[ ] Inkcyclopedia
+[ ] Pencyclopedia
+[ ] Reviews (pen, ink, paper, stores, sites, etc)
 [ ] A discussion forum (or use something like WordPress)
-[ ] Reviews (pen, ink, paper ,etc)
-
-[ ] Pen Vendors
-[ ] Ink Vendors
-[ ] Paper Vendors
 
 
 OTHER TASKS
@@ -51,6 +50,9 @@ OTHER TASKS
     [x] Decide on background color (brown? dark green? Dark red?)
 [x] Use gradients to make logo and larger display text appear to have shading like fountain pen inks often do.
 [ ] Can I apply gradients on a character by character basis? Use <span> for each letter of the title and maybe subtitle? Time consuming work, but might be very cool and appropriate.
-[ ] As we get into databases, create a pen quote database and read one randomly each time the page is refreshed, display in the header or footer.
-
- 
+    [ answer: yes - see JS page on how to apply to links, a very good target that is styled differently from regular text anyway]
+[ ] Use the pen quote database and read one randomly each time the page is refreshed, display in the header or footer.
+[ ] Also have a page to let people customize and format the pen quotes (see my Quooqle site) - look at meme creation sites for examples?
+[ ] Members page - with photo and handwritten (by member) information about them
+[ ] Login system
+   [ ] Let admins edit blog, events, other things on page not just AirTable

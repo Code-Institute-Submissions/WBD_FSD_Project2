@@ -1,5 +1,7 @@
 BUGS & CHANGES
  
+[ ] MOVE THIS TO AN AIRTABLE DATABASE TABLE(S) = bugs and feature ideas
+
 LEGEND:  x=fixed, i=in progress, p=partial
 
 FIXED:
@@ -19,18 +21,23 @@ HIGH PRIORITY
 
 MEDIUM PRIORITY
 
-[ ] CHANGE: Work on the menu buttons on the side, making them change from one to two wide and above the content area, to two wide on wider sizes, then to perhaps 3 or 4 wide as thet site is used on wider screens using BootStrap column sizing. 
+[ ] CHANGE: Work on the menu buttons on the side, making them change from one to two wide and above the content area, to two wide on 
+    wider sizes, then to perhaps 3 or 4 wide as thet site is used on wider screens using BootStrap column sizing. 
 
 [ ] SAFARI: Nav buttons don't appear at all on iPhone 4
 
-[ ] IE11: Columns not working at all on IE11, tables can be even worse.  Is this a known IE11 problem?  It used to work better so it could be me, but since more modern browsers look fine, I have to wonder 1280x1024 display.  I'd like to figure this out since I have a bad feeling a lot of folks still use IE 11 or even older.
+[ ] IE11: Columns not working at all on IE11, tables can be even worse.  Is this a known IE11 problem?  It used to work better so it 
+    could be me, but since more modern browsers look fine, I have to wonder 1280x1024 display.  I'd like to figure this out since I have a
+     bad feeling a lot of folks still use IE 11 or even older.
 
-[i] Add text to Social Media column in footer: "Do you use social media like Facebook or Twitter?  So do we!  Join us on our social media sites!"
+[i] Add text to Social Media column in footer: "Do you use social media like Facebook or Twitter?  So do we!  Join us on our social media 
+    sites!"
 
 [ ] Make icons bigger for social media in footer
 [ ] Style phone and email icons in middle column like Social Media links?
 
-[ ] Make logo somewhat larger, increase the tiny iowa silhouette nib hole, perhaps surround the whole think by an outline of the State of iowa, or work in the State Capitol done (or style the State Capital with a nib where the dome is)
+[ ] Make logo somewhat larger, increase the tiny iowa silhouette nib hole, perhaps surround the whole think by an outline of the State of
+     Iowa, or work in the State Capitol done (or style the State Capital with a nib where the dome is)
 
 [ ] Change columns in -sm mode so that we get two columns of buttons.
 
@@ -38,13 +45,17 @@ MEDIUM PRIORITY
 
 [ ] Change button style so icon is on left, label or right. Might restrict size of label, but I think it will look better.
 
-[ ] Change heading of events page to "IOWAPEN & PEN COMMUNITY EVENTS" and add writing/pen/etc related "national/world" days, pen shows, Midwest pen club meeting dates (if regular enough to do easily?)
+[ ] Change heading of events page to "IOWAPEN & PEN COMMUNITY EVENTS" and add writing/pen/etc related "national/world" days, pen shows, 
+    Midwest pen club meeting dates (if regular enough to do easily?)
     
 LOW PRIORITY
 
 [ ] Edge: In join.html the required field default text is not red. Highlight in red if you hit Join button and leave blank, though. 
 
-[ ] Edge: Is ugly about drawing text in regular font and THEN styling.  Other browsers don't do that. Idea for fix: Any way to set font in HTML or is <font> tag deprecated?  Might still work (MS is known to do that); try and see. Can't hurt, might help. I'd thought of style= param on body but that will probably override stylesheet so no.  Edge is being rewritten to use Webkit I've heard, so this problem may go away. Google for fix though.
+[ ] Edge: Is ugly about drawing text in regular font and THEN styling.  Other browsers don't do that. Idea for fix: Any way to set font 
+    in HTML or is <font> tag deprecated?  Might still work (MS is known to do that); try and see. Can't hurt, might help. I'd thought of
+     style= param on body but that will probably override stylesheet so no.  Edge is being rewritten to use Webkit I've heard, so this 
+     problem may go away. Google for fix though.
 
 [ ] Win Chrome:  Context and table text seems smaller than on Mac on all pages. Google for known problem?
 
