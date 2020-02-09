@@ -33,12 +33,9 @@
 
                         <ul id="dataList">
                             <li v-for="item in items">
-                                <h4>{{ item['fields']['Title'] }}</a></h4>
-                                <p align=right>
-                                    <span class="author">  written by  {{ item['fields']['Author'] }}</span>
-                                    <span class="date"> - </strong>{{ item['fields']['FormattedDate'] }}</span>&nbsp;&nbsp;
-                                </p>
-                                <pre>{{ item['fields']['Body'] }}</pre>
+                                <p class="blog-heading">{{ item['fields']['Title'] }}</a></p>
+                                <p class="blog-attribution"> by  {{ item['fields']['Author'] }} - {{ item['fields']['FormattedDate'] }} &nbsp;&nbsp;</p>
+                                <pre class="blog-body">{{ item['fields']['Body'] }}</pre>
                                 <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150">
                                 <hr/>
                             </li>                            

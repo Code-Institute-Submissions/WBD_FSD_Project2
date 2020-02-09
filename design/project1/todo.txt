@@ -50,7 +50,7 @@ OTHER TASKS
     [x] Decide on background color (brown? dark green? Dark red?)
 [x] Use gradients to make logo and larger display text appear to have shading like fountain pen inks often do.
 [ ] Can I apply gradients on a character by character basis? Use <span> for each letter of the title and maybe subtitle? Time consuming work, but might be very cool and appropriate.
-    [ answer: yes - see JS page on how to apply to links, a very good target that is styled differently from regular text anyway]
+    [ answer: yes - see code and link is style.css, a very good target that is styled differently from regular text anyway]
 [ ] Use the pen quote database and read one randomly each time the page is refreshed, display in the header or footer.
 [ ] Also have a page to let people customize and format the pen quotes (see my Quooqle site) - look at meme creation sites for examples?
 [ ] Members page - with photo and handwritten (by member) information about them
