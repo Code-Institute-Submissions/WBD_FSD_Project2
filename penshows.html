@@ -55,6 +55,7 @@
                             </tbody>
                         </table>
                         <ul id="dataList" style="display: none; ">
+                            <hr class="block-divider">
                             <li v-for="item in items" v-if="item['fields']['Start Date']">
                                 <h3><a :href="item['fields']['Website']"  target="_blank">{{ item['fields']['Name'] }}</a></h3>
                                 <p></p>
@@ -65,16 +66,16 @@
                                 <p><strong>When: </strong>{{ item['fields']['Frequency'] }} - {{ item['fields']['Occurrence'] }}</p>
                                 <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
                                 <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
-                                <hr/>
+                                <hr class="block-divider">
                             </li>
                         </ul>
                         <div class="col text-color-section section-heading section-text">
-                            <p>If no event information appears above, your organization or ISP may be blocking AirTable.com</p>
-                            <hr class="block-divider">
-                            <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>.<br/>
-                               If you wish you can <a href="#">copy</a> or <a href="#">link</a> to the database in your personal AirTable workspace.</p>
-                            <hr class="block-divider">
+                            <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>.  If no event information appears above, your organization or ISP may be blocking AirTable.com
+                            </p>
+                            <!-- If you wish you can <a href="#">copy</a> or <a href="#">link</a> to the database in your personal AirTable workspace.-->
+                            <!--
                             <p>Do you have a pen show to add or a correction to make to this pen show database? <br/><a href="penshows_email.html">Let us know!</a></p>
+                            -->
                         </div>
                     </div><!--app-->
                 </div>
