@@ -32,6 +32,7 @@
                         </form>
                     </div>
                 </div>
+
                 <div class="row no-gutters">
                     <div id="app" class="col text-color-section" style="padding-left: 10px; padding-right: 10px; ">  <!-- col text-color-section section-text text-center section-heading -->
 
@@ -62,19 +63,15 @@
                                     <td> {{ item['fields']['PublicationDate'] }} </td>
                                     <!-- 
                                     <td> <a :href="item['fields']['Website']">{{ item['fields']['Website'] }}</a></td>
-                                    <td> {{ item['fields']['Notes'] }} </td>
+                                    <td> {{ item['fields']['Notes'] }} </td> 
                                     <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  
                                     -->
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr class="text-center">
-                                    <th scope="col" colspan=7>If no event information appears above, your organization or ISP may be blocking AirTable.com</th>
-                                </tr>
-                            </tfoot>
                         </table>
 
                         <ul id="dataList" style="display: none; ">
+                            <hr class="block-divider">
                             <li v-for="item in items">
                                 <h3><a :href="item['fields']['AmazonAssociateLink']">{{ item['fields']['Title'] }}</a></h3>
                                 <p><strong>Author: </strong>{{ item['fields']['Author'] }}</p>
@@ -86,16 +83,17 @@
                                 <p><strong>Web site: </strong><a :href="item['fields']['Website']">{{ item['fields']['Website'] }}</a></p>
                                 <p><strong>Notes: </strong>{{ item['fields']['Notes'] }}</p>
                                 <!-- img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150"  -->
-                                <hr/>
+                                <hr class="block-divider">
                             </li>                            
                         </ul>
 
                         <div class="col text-color-section section-heading section-text">
-                            <hr class="block-divider">
                             <p>This database is maintained in <a href='https://airtable.com/product/'>AirTable</a>. 
-                             <a href="#">Copy</a> or <a href="#">link</a> to it in your AirTable workspace.</p>
-                             <p>Got a pen book to add to this database? <a href="penbooks_email.html">Let us know!</a></p>
+                            If no event information appears above, your organization or ISP may be blocking AirTable.com
+                            <!-- <a href="#">Copy</a> or <a href="#">link</a> to it in your AirTable workspace.</p> -->
+                            <p>Got a pen book to add to this database? <a href="penbooks_email.html">Let us know!</a></p>
                         </div>
+
                     </div><!--app-->
                 </div>
             </div>
