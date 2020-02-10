@@ -1,19 +1,35 @@
 MILESTONE PROJECT 2 (and beyond) TASKS
 
-[ ] Finish club email contact page by linking to EmailJS
+[x] Finish club email contact page by linking to EmailJS
 
-[ ] Create club members maps using data from question on FB etc; have an Iowa Map (and part of surrounding states), USA map, and World map
+[x] Create club members maps using data from question on FB etc; have an Iowa Map (and part of surrounding states), USA map, and World map
+
 [ ] Move club member map data into AirTable database table and read it from there, so we can add easily w/o code changes.
 
 [x] Switch Vue to production mode from development mode https://vuejs.org/guide/deployment.html
+
 [x] Share the database READ-ONLY with an 'IowaPenReadOnly" AirTable account amd use the app_id and app_key from IowaPenReadOnly to make sure this can't be modified (for now)
+
 [x] Make the data into a table and use the same Bootstrap table styling we use for other tables on the IowaPen site
 
-[x] Having the data in a more readable checklist form WITH A CHECKBOX VISIBLE AND ON/OFF might be nice too.
-[ ] Put links to AirTable and a way for them to copy the table to their AirTable account for their own use.
+[ ] Having the data in a more readable checklist form WITH A CHECKBOX VISIBLE might be nice too.  Let them print a 
+    checklist of books for their use. 
+    [ ] Make it look nice when printed using media queries; stripping header/footer etc of web page not needed on paper.
+
+[ ] Put links to AirTable and a way for them to copy the table to their AirTable account for their own use?
 
 [x] Create a database for club and pen events and display THAT from a table too.
-[ ] Add an Email form to submit a new book for the Pen Books page.  Dupe it for future pages. Use EmailJS to mail
+
+[ ] Add an Email form to submit a data for the various page. Use EmailJS to mail (create a generic form and concat 
+the various fields into the body, one per line so we don't have to have a billion EmailJS forms...since their free
+plan only allows two forms!
+
+    [ ] Pen Shows
+    [ ] Pen/club News
+    [ ] Pen events
+    [ ] Pen books
+    [ ] Other databaes as they are created
+
 
 [ ] Other tables to create:
     [x] Pen Magazines (PenWorld, FP Journal, PENnant, Pen Middle East, etc) 
@@ -31,5 +47,13 @@ MILESTONE PROJECT 2 (and beyond) TASKS
     [ ] Pen Haiku
     [ ] Pen models
     [ ] Inks
+    [ ] Inkcyclopedia
+    [ ] Pencyclopedia
+    [ ] Prduct Reviews
+    [ ] Ink Samples
+    [ ] Pen Pictures
+    [ ] Pen Pals
+    [ ] Pen classified ads
+    [ ] Pen Podcasts and Vodcasts (YouTube channels)
 
-[ ] Export data from databases and archive in GitHub occasionally (CSV? JSON? XML?)
+[ ] Export data from databases and archive in GitHub occasionally (CSV? JSON? XML? several? ) - in a databases folder

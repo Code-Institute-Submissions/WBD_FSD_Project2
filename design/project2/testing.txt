@@ -1,12 +1,11 @@
 TESTING PLATFORMS
 
-
-
 Mac OS
     [x] Safari
     [x] Chrome
     [ ] Firefox
     [ ] Microsoft Edge? (It's available for iOS, is it for macOS? )
+    [ ] Microsoft Internet Explorer?
 
     [ ] Test very wide-screen use of site on iMac: 2xxx by 1xxxx
         [ ] How do Nav buttons look?
@@ -19,7 +18,6 @@ Windows (can't access our site or AirTable at work, use Parallels VM)
     [ ] Mozilla Firefox 
     [ ] Edge (may not bother; it's being replaced)
     
-
 iOS iPhone 6s Plus
     [x] Mobile Safari
         [x] Portrait
@@ -29,43 +27,7 @@ iOS iPad Air
     [ ] Mobile Safari
         [ ] Portrait
         [ ] Landscape
-        
-OLDER
 
-iOS iPhone 6s Plus
-    [ ] Safari
-    [ ] Chrome
-    [ ] Firefox
-    [ ] Edge
-    
-iOS iPad Air
-    [ ] Safari
-    [ ] Chrome
-    [ ] Firefox
-    [ ] Edge
-
-EVEN OLDER
-
-iOS iPhone 4s
-    [x] Mobile Safari
-        [ ] Portrait
-        [ ] Landscape
-
-iPad (original)
-    [ ] Mobile Safari
-    [ ] See if anything else available, but doubtful
-
-
-OTHER PLATFORMS
-
-Linux (via Parallels VM)
-    [ ] Chrome
-    [ ] Firefox
-    
-    
-PLATFORMS I HAVE NO ACCESS TO
-(find a source)
-
-[ ] Android
-[ ] ChromeOS
-[ ] What else???
+[ ] What else?
+[ ] How old do we test? I have old iphones, ipads, even old Windows VMs we could test on to see how the site degrades
+   [ ] Use Lynx text-only web browser?
