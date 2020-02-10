@@ -20,6 +20,10 @@ TO DO
 
 [i] Switch from 1/3-2/3 column ration in <section> to 1/4-3/4 column ration in xl screen size, maybe lg size.
 
+[ ] Investigate oing from a 1/3rd-2/3rds layout to a 1/4-3/4 layout on the larger size breakpoints (-xl and maybe -lg) or maybe to 3 columns or more of buttons so the buttons don't get HUGE on either widescreen monitors or on small smartphone screens
+
+  [ ] Make even the -xs size screen layout via Bootstrap go to two columns of buttons so users won't have to scroll so much
+
 Add the following pages as time allows
 
 [x] Pen Shows
