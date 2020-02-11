@@ -14,7 +14,15 @@ We are using GitHub Pages to host the site. You can also use iowapen.com and iow
 
 I will copy this project to the main iowapen.club site shortly after I submit it for review and grading. 
 
-You can still see the project 1 site at https://iowapen.club/WBD_FSD_Project1/ and code repo at https://github.com/IowaPen/WBD_FSD_Project1/  - the repo has been set to "archived" to disallow changes, and I will do the same with the Project 2 repo eventually. 
+You can still see the project 1 site at
+
+- https://iowapen.club/WBD_FSD_Project1/ 
+
+and code repo at 
+
+https://github.com/IowaPen/WBD_FSD_Project1/
+
+The repo has been set to "archived" to disallow changes, and I will do the same with the Project 2 repo at some point. 
 
 --- 
 
@@ -30,11 +38,11 @@ Since the modules of the course after the last project focused on the JavaScript
 
 ### APIs:
 - AirTable 
-    - database used to store most tables and lists display on many of the site's pages
+    - the database API used to store the data for most tables and lists displayed on many of the site's pages (events, books, shows, blog, etc.)
 - Google Maps 
-    - on the chapters.html page, used to display the Iowa And USA member location maps
+    - used on the chapters.html page to display the Iowa And USA member location maps
 - EmailJS
-    - on the join page used to send the Join the Club request email and autoreply
+    - used on the join .html page to send the Join the Club request email and auto-reply
 
 ### OTHER RESOURCES USED:
 - HoverCSS
@@ -42,7 +50,8 @@ Since the modules of the course after the last project focused on the JavaScript
 - FontAwesome (navigation and other icons)
 
 ---
-## HOW THEY WERE USED
+## HOW THEY ARE USED
+
 ---
 
 ### AIRTABLE API 
@@ -52,23 +61,26 @@ Since the modules of the course after the last project focused on the JavaScript
  I call this out specifically because at first my mentor did not realize these tables were generated via JavaScript frameworks and a database API and suggested I specifically mention it.
 
 The pages where this is presently done are:
+
 - index.html (the Recent News and Upcoming Events sections)
 - penblog.html
 - penshows.html
 - penbooks.html
 - penevents.html
 
-Some of these pages share the same database, (index, penblog and penvents) and just show different datasets from the database; for example, the index page just show events in the near future while the penblog and penevents page presently show all events. The penevents page also leaves out events in the database that have no dates set yet (typically annual pen shows later in 2020 that haven't set their date for 2020 yet.)
+Some of these pages share the same database (the index, penblog and penvents pages) and just show different datasets from the database tables; for example, the index page just shows events in the near future, while the penblog and penevents page presently show all events. The penevents page also leaves out events in the database that have no dates set yet (typically annual pen shows later in 2020 that haven't set their date for 2020 yet.)
 
-Many more such database-driven pages will be added in the near future, after this project is submitted. Data is being gathered for them now, though it will take some months to do that, so the buttons for those pages were placed the "COMING SOON" section of the site navigation buttons and display a "coming soon" page when clicked.  
+Many more such database-driven pages will be added in the near future, after this project is submitted. Data is being gathered for them now, though it will take some months to do that, so the buttons for those pages were placed in the "COMING SOON" section of the site navigation buttons. Those buttons display a "coming soon" page when clicked.  
 
-(The "coming soon" page, incidentally, is a copy of the template.html page that is used when starting a new page for the site, to help keep a consistent structure.)
+(The "coming soon" pages, incidentally, are just a copy of the template.html page that is used when starting a new page for the site, to help keep a consistent structure and a good startng point when starting to build the actual page.)
 
-The IowaPen site uses an account with read-only access to the databases. Various levels of access to AirTable databases can be granted. You can see the tables we have created so far yourself (read-only) using this sharink link to AirTable.
+There are a few pages that are not hooked up yet, penshows_email.html and penbooks_email.html because I want to do those next, to allow people to send me new items for those pages.
+
+The IowaPen site uses an AirTable account with read-only access to the databases to make the data available on the web site. Various levels of access to AirTable databases can be granted. You can see the tables I have created so far yourself (read-only) using this sharing/invitation link to AirTable.com.
 
 https://airtable.com/invite/l?inviteId=invKYDXDo5unu9HhF&inviteToken=fc8bc9aef59313141d1738d8dc9d64695c33cf64770ead3d6405485edadbe464
 
-(You will need to set up a free AirTable.com account to view the data; I encourage it! It's a handy service that my family uses for other things than just IowaPen. They have a good free tier as well as paid tiers that provided more features. We are doing all this and even our own database for home use with the free tier.)
+Note: You will need to set up a free AirTable.com account to view the data; I encourage it! It's a handy service that my family uses for other things than just IowaPen. They have a good free tier as well as paid tiers that provided more features. We are doing all this and even our own databases for home use with the free tier.
 
 See api.airtable.com once you have logged in to AirTable and are looking at databases to get the API information for a specific database.
 
@@ -80,70 +92,84 @@ Vue and Axios are used to access and display data from the AirTable databases.
 ---
 #### BOOTSTRAP FRAMEWORK
 
-Boostrap is used for the site UI, table formatting, and other thing, as well as regular CSS.
+Boostrap is used for the site UI, table formatting, and other things. Regular CSS is also used as well.  
 
 ---
 #### JQUERY FRAMEWORK
 
-One of the biggest uses of jQuery on this site is to implement the "include" feature of programming languages, so I can move the common code of the header, navigation buttons and booter present on ever web site to separate files.  That way you only have to change one file to change the header, nav buttons or footer on ALL The pages.   This has already been incredibly helpful as it make sthe HTML pages smaller, and I've already rearranged the navigation buttons several times. 
+jQuery is used on this site to implement, on HTML pages, the "include nother file" feature found in many compiled programming languages, so I can move the common code of the header, navigation buttons and footer present on every web page on the site to separate, single files. That way I only have to change one file to change the header, navigation buttons or footer on ALL the site pages. Only the actual page content and often some JavaScript code is different on each page. This has already been incredibly helpful as it makes the HTML pages much smaller and cleaner. I've already rearranged the navigation buttons several times after doing this, and added several new navigation buttons, too.
 
 ---
 #### EMAILJS FRAMEWORK AND API
 
-EmailJS is used on the join.html page to send an email to our iowapen@gmail.com address with the information from that form and also to generate an auto-reply to the person wanting to join with more contact information for our club and our social media accounts.  Since the email generated by EmailJS uses HTML tags, I have checked the HTML code for the emails into this project's source code repo too.
+EmailJS is used on the join.html page to send an email to our iowapen@gmail.com address with the information from that form, and also to generate an auto-reply email to the person wanting to join, with all the contact information for our club and our social media addresses. Since the email generated by EmailJS uses HTML tags, I have checked the HTML code for both emails into this project's source code repo too.
 
-I also have the code to send the email let the user know it has been sent and clear the form after they click the "join" button. 
+I also have added JavaScript code to the basic JS code that sends the email so that it now pops up a JS alert that lets the user know their information has been sent and then to clear the form, when they click the "join" button. 
+
+---
+#### GOOGLE MAP API
+
+The Google Maps API is used to display two maps on the Chapters page, one for members who live in Iowa, and another for members (more than a few) who live outside of Iowa.  Some used to live in Iowa and have moved elsewhere, some joined us through our Facebook Group which is our most active online presence.  We do even have several members who live outside the USA but I have not gotten their OK to use their city on the map yet. When I do I will add a third world-wide map.  
+
+These maps will be useful to allow members who live outside the locations of our two main chapters (both large cities) to connect with others who live nearby, and hopefully form new small club chapters, since it is often a several hour drive for some of them to reach the two main club chapter locations.  I also plan on using this information to _proactively_ suggest the formation of other chapters to clusters of members as well.  We have over 150 members in the club as of the date I wrote this, growing steadily and I know of at least one other cluster of members near "Pen City": Fort Madison, Iowa - the home of the venerable Sheaffer Pen company for about 100 years, one of the largest pen companies.
+
+I may also make maps of pen stores, pen shows, pen clubs, etc. in the future and add them to those pages on this site.
+
+---
+
+#### OTHER RESOURCES
+
+Google Fonts, Hover.css and FontAwesome were used in my first project and are still used for the same purposes as in that project (fonts, CSS hover effects, and icons used on the site, respectively.)
+
 
 ---
 ## REASON FOR THE SITE AND PROJECT
 
-IowaPen is a pen collectors club, a gathering of people interested in fountain pens, mechanical pencils, and writing instruments of all kinds. Calligraphy, penmanship, pen collecting, vintage pen restoration, nib tuning, ink testing/sharing, paper, pen turning, history and more. It's really quite fascinating how many branches and areas of interest tehre are in this hobby; history, art, chemistry, and many more.
+IowaPen is a gathering of people interested in fountain pens, mechanical pencils, and writing instruments of all kinds. Calligraphy, penmanship, pen collecting, vintage pen restoration, nib tuning, ink testing /s haring, paper, noteooks, bullet journals, pen turning, history and more. It's really quite fascinating how many branches and areas of interest there are in this hobby; history, art, chemistry, craftsmanship, restoration, and many more.
 
-My pen club needed a web site, not just a Facebook page and other social media accounts. Not everyone uses social media, plus a web site is a great way to get found via web search engines. There is also a lot of other things we can do with a web site than can be done with a social media site.  We have business cards but this is our electronic business card. 
+I needed a project for this class, and my pen club needed a good web site, not just a Facebook page and other social media accounts. Not everyone uses social media, plus a web site is a great way to get found via web search engines. There are also a lot of other things I can do with a web site that can't easily be done with a social media site, such as the many databases of reference material I am working to add.  
 
-here are several reasons and uses for the site:
+We have business cards to promote the club, and the web site is our electronic business card and more.
 
-- Information about club activities and events
+So, there are several reasons and uses for the site:
+
+- Information about club (and pen-related) activities and events and shows.
 - Pen and club news
-- A place to store a large amount of useful information about this hobby that I am trying to collect and make available to our club members
-- To have something that doesn't rely on a third-party social media service.
-
----
-## FUTURE PLANS
-
-Eventually I want to also take that information and turn it into a side project / side business similar to IMDB, as the Internet Movie  Database has done for movies and TV. I will call it somethng like the Internet Pen Enthusiast Network and make money from advertisting and possibly some sort of store selling pens and related products.
+- A place to store a large amount of useful reference material about this hobby that I am collecting to make available to our club members
+- To have something that doesn't rely on a third-party social media service and is available to EVERYONE. 
 
 ---
 ## WHY COLLECT PENS?
 
-There is a surprising amount of interesting in analog writing and in fine writing instruments, even more so in this day of overloading on all things digital. This is a worldwide hobby and much larger than most people imagine.
+There is and long has been a surprising amount of interest in handwriting and in fine writing instruments, inks, paper, and notebooks, and that seems to be growing in this day of overloading on all things digital. This is a worldwide hobby and much larger and longer-lived than most people realize.  
 
-- The Fountain Pen Network Facebook Group, for example, has over 25,000 members, from all over the world
+- The Fountain Pen Network Facebook Group, for example, has over 25,000 members from all over the world
 
-- There are sixteen or seventeen pen show JUST in the United States every year
+- There are sixteen or seventeen pen shows JUST in the United States every year
     - Some have been held annually for several decades (the Los Angeles International Pen Show is in it's 32nd year in 2020 , for example.)
     - There are many more shows worldwide
 
-- There are dozens of large pen companies, hundreds of smaller companies and uncountable custom pen makers working out of their backyard workshops.  The same is true for ink and paper vendors and related products and services such as sales, repair, restorations of 'vintage' (antique pens) and more.
+- There are dozens of large pen companies, hundreds of smaller companies and uncountable custom pen makers working out of their backyard workshops.  The same is true for ink and paper vendors and related products and services such as sales, repair, restorations of 'vintage' (antique pens) and more.  For a digital society, we sure still love to write on paper!
+
+---
+## FUTURE PLANS FOR THE SITE
+
+Eventually I want to also take that information I am collecting and turn it into a side project / side business similar to IMDB (the Internet Movie Database). I want to do for writing equipment what IMDB has done for movies and TV. I will call it somethng like the Internet Pen Enthusiasts Network Database (iPenDB) and make money from advertising, and possibly some sort of store selling pens and/or related products. I have been working to restore many "vintage" (antique) fountain pens you can find in antique stores so that they work again (surprisingly easy and you can make good money doing this - many are far more attractive than modern pens) and also am creating nice pen storage boxes from the beautiful wood cigar boxes you can get at tobacco stores; they are very popular. There are also affiliate or advertising programs on several online pen stores, as well as sites like Amazon that I may use. 
 
 ---
 # UX DESIGN 
 
 ## COLORS AND DESIGN ELEMENT REASONING
 
-We use deep saturated and shaded colors for the pages as these are popular in fountain pen inks
- 
- A large part of the pen collecting tends to involve Fountain pens. They are still in common use, worldwide (more so outside the USA). Fountain pen collectors and users often enjoy them more than other kinds of pens due to the huge multitude of rich, beautiful and easily changed (and even custom mixed) fountain pen ink colors available, and are very drawn to color -- this site design honors that love of color.  
-
 The visual elements of the site are designed to resemble writing, ink and paper; especially the writing with beautiful ink shading and sheen providing by fountain pen inks and various size writing points (nibs). 
 
 I accomplished the look of "shading" through the use of CSS radial and linear gradients on the text and navigation button backgrounds.
 
-The navigation buttons were intended to resemble ink sample swatches very commonly used by ink vendors, stores and enthusiasts to catalog and show off their ink colors and collections as well as the shading and "sheen" of some inks. Eventually I might even replace the backgrounds with ACTUAL ink swatch photos.
+The navigation buttons were intended to resemble ink sample swatches very commonly used by ink vendors, stores and enthusiasts to catalog and show off their ink colors and collections as well as the shading and "sheen" of some of the inks. Eventually I might even replace the backgrounds with ACTUAL ink swatch photos.
 
 To see some real-life examples of those ink color charts:
 
-    https://www.google.com/search?q=fountain+pen+ink+color+chart
+- https://www.google.com/search?q=fountain+pen+ink+color+chart
 
 See also these chart images in the /assets/images/inkcharts folder of our running site.
 
@@ -151,7 +177,11 @@ See also these chart images in the /assets/images/inkcharts folder of our runnin
 - https://iowapen.club/WBD_FSD_Project2/assets/images/inkcharts/private_reserve_ink_chart.jpg
 - https://iowapen.club/WBD_FSD_Project2/assets/images/inkcharts/platinum_mixable_ink.jpg 
 
-Also, the content area of the page has a faint "dot grid" background accomplished via CSS; many pen hobbyists also like fine paper and notebooks, and a very popular notebook / paper design (and my personal favorite) is the "dot grid" style of paper It is flexible without the lines of more common paper gettng in the way of writing or especially of drawing.
+We use deep saturated and shaded colors for the site as these rich colors are very popular in fountain pen inks, and the variety is far greater than in other types of pens. 
+ 
+A large part of the pen collecting tends to involve Fountain pens. They are still in common use, worldwide (more so outside the USA). Fountain pen collectors and users often enjoy them more than other kinds of pens due to the huge multitude of rich, beautiful and easily changed (and even custom mixed) fountain pen ink colors available. They are often very drawn to rich colors -- this site design honors that love of color.  
+
+The content area of the page even has a faint "dot grid" background accomplished via CSS; many pen hobbyists also like fine paper and notebooks, and a very popular notebook / paper design (and my personal favorite) is the "dot grid" style of paper. It is flexible without the lines of more common paper gettng in the way of writing or especially of drawing or diagramming.
 
 ---
 ## WHO IS THIS WEB SITE FOR?
@@ -164,22 +194,21 @@ It is for members of the IowaPen club, or other people interested in writing ins
 - Find our meeting dates, times and locations (we have several chapters in different cities)
 - Find our social media sites and other contact information
 - Read news and information about the club and about the hobby in general
-- Find other resources related to the hobby; these resources are fragmented all around the web and I plan to eventually provide a single resources for many of them, sort of the IMDB of writing instruments
+- Find other resources related to the hobby; these resources are fragmented all around the web and I want to centralize them.
 
+---
 ### THE BEST WAY TO HELP THEM ACHIEVE THESE THINGS 
 
-A web site is accessible to anyone. Not everyone uses Facebook, Twitter, and other social media and never will. We need a free and open place
-on the Internet for anyone to be able to access information about our club, at any time, with most any device. 
+A web site is accessible to anyone. Not everyone uses Facebook, Twitter, and other social media and never will. We need a free and open place on the Internet for anyone to be able to access information about our club, at any time, with most any device. 
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+---
+### USER STORIES FOR THIS SITE
 
-### USER STORIES
-
-User stories are statements of the form: "As a _user type_, I want to perform an _action_, so that I can achieve _a goal_."
+User stories are statements of the form: "As a _user type_, I want to perform an _action_, so that I can achieve _a goal_." used to design a product such as this site.  Here are users stories I created when planning this site:
  
-- As a pen collector or admirer, I want to find a pen club, so I can join and meet other pen hobbyist.
+- As a pen collector or admirer, I want to find a pen club, so I can join and meet other pen hobbyists.
     
-    This is handled by the site itself, and the Chapters and Join pages. 
+    This is handled by the site Chapters and Join pages. 
 
 - As a pen club member, I want to find out when the next meeting or future meeting date is, or if we are meeting during the summer, so I can plan my time.
 
@@ -187,78 +216,84 @@ User stories are statements of the form: "As a _user type_, I want to perform an
     
 - As a pen club member, I want a list of pen clubs / pen shows / pen stores / pen makers / ink makers etc., so that I can contact or visit them,
 
-    - These pages will be filled out in the future; There's no definitive list of these anywhere on the web; I hope to create one for all of these and for our members.
+    - There are many such lists, often incomplete and poorly maintained, but no definitive list of these exists anywhere on the web; I hope to create and maintain consolidated lists for all of these and for our members.
 
-    - I like to find pen stores, shows or local clubs when I travel on vacation.
+    - I like to find pen stores, shows or local clubs when I travel on vacation so I'll find such thing personally useful.
     
-- As a pen hobbyist, I want to see pen-related news, so that I can keep up-to-date on the hobby or a specifc product
+- As a pen hobbyist, I want to see pen-related news, so that I can keep up-to-date on the hobby or a specific product
 
-    - The blog page will eventually fill that need as I find pen related news items by several means and link to them
+    - The blog page will fill that need as I find pen related news items by several means and link to them.
     
-- As a pen hobbyist, I want to discuss pen issues (pens, inks, papers, repair, many more) with other similar people, so that I can find the pen/ink/etc I need.    
+- As a pen hobbyist, I want to discuss pen issues (pens, inks, papers, repair, many more) with other interested people, so that I can find the pen/ink/etc I need.    
 
-    - The forum page will eventually fill that need and let us move away from Facebook (I hope); we tried to use Yahoo Groups for this, but most people seem to prefer Facebook.  
+    - The forum page will eventually fill that need and let us move away from Facebook -- I hope; we tried to use Yahoo Groups for this, but most people seem to prefer Facebook.
 
-    - This is a lower priority item but I would still like to do it.  I might just link this button to Facebook or Yahoo Groups at some point. 
+---
+### PAGE DESIGN
 
-To see some wireframes/sketches of the basic site layout, look in the design/wireframes folder.  There are also text files with design notes, a bug/change tracking page, a testing plan page, to-do list, etc.
+To see some wireframes / design sketches of the basic site layout, look in the design/projectN/wireframes folder in the source code.  There are now folders for both project1 and project2.  Most things that were in the project 1 folder have migrated to project 2, but a few things are still present there including the wireframes/sketches for that project.  The Project 2 folder also has a wireframes folder.
 
-## Features / Existing Features
+There are also text files with design notes, a bug/change tracking page, a testing plan page, to-do list, etc. in the design folders.
 
-This web site has a navigation bar with links to each of the services we provide.  Most will be added in the future, but for now the important parts available are
+---
+## SITE FEATURES AND NAVIGATION
 
-- The main page (index.html) describing the club and listing the upcoming meeting and other event dates.  There is a more detailed events page with events months into the future.
-- The events page (events.html) with a list of events, both pen club events and pen-related events like Fountain Pen Day listed.  It should go several months into the future where possible.
-- The chapters page (chapters.html) listing each of the IowaPen chapters, usual meeting dates (e.g. 2nd Sunday of the month, 4-5pm), location and contact information
-- The join page (join.html) with a form to email IowaPen and ask to join - this will actually be hooked up in a later modle of the course
+This web site has a navigation bar with links to each of the services we provide.  Most will be added in the future, but for now the important parts available are:
 
-The other pages are mostly reference material and will be added as time allows, ideally eventually fed from databases as part of projects later in the course (I hope)
+- The main page describing the club and listing recent news, and upcoming events such as meetings or shows. 
 
- 
+- The events page with a list of events, both pen club events, pen shows, and pen-related events like Fountain Pen Day listed.  
+
+- The chapters page listing each of the IowaPen chapters, usual meeting dates (e.g. 2nd Sunday of the month, 4-5pm), location and contact information
+
+- The join page with a form to email IowaPen and ask to join
+
+- The blog page with club & pen news and information.
+
+The other pages are mostly reference material and will be added as time allows. Many are planned, but the site now has reference pages for:
+- Pen Shows
+- Pen Books
+- Pen Events
+
+---
 ### FEATURES LEFT TO IMPLEMENT
 
-In looking over the course syllabus/schedule, I can see opportunuties to implement many of these as part of other course major projects:
+In looking over the course syllabus/schedule, I can already see many opportunuties to implement many of these as part of other major projects in the course:
 
-- Make menu backgrounds actual ink sample swatches instead of color gradients
-
-- As I continue through the course there are areas for which I will create pages
-    - [X] Blog (implement own, use third party such as WordPress, Blogger, etc)
-    - [X] Pen Show database (as opposed to simple list, allow update submission)
-    - [X] Pen & Club Events list
-    - [X] Pen Books list
-    - [ ] Pen Magazine list
-    - [ ] Pen Store list (online and bricks-and-mortar)
-    - [ ] Pen Club list
-    - [ ] Pen Vendor list
-    - [ ] Ink Vendor list
-    - [ ] Paper vendor list
-    - [ ] Product reviews
-    - [ ] Pen Terminology
-    - [ ] Pen / Ink / Writing quotes (as part of the course that covers using databases) - I already have a large quotation list
-    - [ ] Discussion Forum (implement own or use third party)
-    
-    FUTURE - Create a writing instrument version of IMDB from the data collected for the IowaPen site and monetize it through ads, etc.
-    - Nicer, more real-life event calendar with club events, pen shows, other related events
-    - Pen databases
-        - Pen companies
-        - Pen models (fountain pen, ballpoint, rollerball, gel, mechanical pencil, etc)
-        - Pen photos
-        - Pen reviews
-    - Ink databases
-        - Ink vendors
-        - Ink brands/lines
-        - Ink reviews
-        - Ink sample images 
-    - Paper databases
-        - Paper vendors
-        - Paper branks/lines
-            - Esp fountain pen friendly or UN-friendly
-        - Paper reviews
-         
-    
+- [X] Blog (implement own or use third party such as WordPress, Blogger, etc.)
+- [X] Pen Show database (as opposed to simple list, allow update submission)
+- [X] Pen & Club Events list
+- [X] Pen Books list
+- [ ] Pen Magazine list
+- [ ] Pen Store list (online and bricks-and-mortar)
+- [ ] Pen Club list
+- [ ] Pen Vendor list
+- [ ] Ink Vendor list
+- [ ] Paper vendor list
+- [ ] Product reviews
+- [ ] Pen Terminology
+- [ ] Pen / Ink / Writing quotes (as part of the course that covers using databases) - I already have a large quotation list
+- [ ] Discussion Forum (implement own or use third party)
+- [ ] Pen databases
+    - Pen companies
+    - Pen models (fountain pen, ballpoint, rollerball, gel, mechanical pencil, etc)
+    - Pen photos
+    - Pen reviews
+- [ ] Ink databases
+    - Ink vendors
+    - Ink brands/lines
+    - Ink reviews
+    - Ink sample images 
+- [ ] Paper databases
+    - Paper vendors
+    - Paper brands/lines
+        - Especially fountain pen friendly or UN-friendly
+    - Paper reviews
+        
+--- 
 ## TECHNOLOGIES USED
 
-Here are all of the languages, frameworks, libraries, and any other tools that I have used to construct this project. For each, I have provided the name, a link to its official site and a short sentence of why it was used.
+Here are all of the frameworks, libraries, and any other tools that I have used to construct this project. For each, I have provided the name, a link to its official site and a short description of why it was used.
 
 - [AirTable](https://airtable.com) - used to store the data used for the tables and lists on many page of this site. 
 
@@ -266,69 +301,72 @@ Here are all of the languages, frameworks, libraries, and any other tools that I
 
 - [Vue](https://vuejs.org/) - used to display data from AirTable
 
-- [Axios](https://github.com/axios/axios) - used to obtain the data from AirTable for display using Vue.
+- [Axios](https://github.com/axios/axios) - used to obtain the data from AirTable databases for display using Vue.
 
-- [Bootstrap JS framework](https://getbootstrap.com/) - this was used to create the site GUI because it's a good framework, makes responsive sites, and because it was used in the course module we just finished and it's the only one I know!
+- [Bootstrap JS framework](https://getbootstrap.com/) - USED to create the site GUI because it's a good framework, makes responsive sites, and because it was used in the course modules we have done so far!
 
 - [Google Fonts](https://fonts.google.com/) - I've used this before; it's an excellent source of fonts for use on web sites and I needed writing/cursive fonts for a writing instrument site.
 
-- [Google Maps](https://maps.google.com/) for the member location maps on the chapters page
+- [Google Maps](https://maps.google.com/) used for displaying the member location maps on the chapters page
 
-- [EmailJS](https://emailjs.com) for the email membership request on the Join page.
+- [EmailJS](https://emailjs.com) used for generating the email membership request on the Join page.
 
-- [FontAwesome icons](https://fontawesome.com) - this is a wonderful source of UI icons to make your site more attractive and intuitive. It was introduced in the course module we finshed and was perfect for finding icons we needed.
+- [FontAwesome icons](https://fontawesome.com) - this is a wonderful source of UI icons to make your site more attractive and intuitive. It was introduced in an earlier course module and is great for finding icons we need.
 
 - [Hover.css](https://ianlunn.github.io/Hover/) - this was used to create the button hover effects. 
 
-
+---
 ## TESTING
 
-I don't have any experience yet with automated web testing tools (though I am aware they exist), hopefully those will be introducted in a future module of the course.
+I don't have any experience yet with automated web testing tools (though I am aware they exist), hopefully those will be introducted in a future module of the course.  This particular project did not lend itself at all to doing TDD with Jasmine as covered by the course.
 
-For now I have been testing the site on an iMac (a very large/wide screen), a MacBook Pro, an iPhone, an iPod Air, and at work on my Windows 10 PC. (For Project 2 I have been unable to do testing on a Windows PC since switching jobs as I now work for a major bank that severly locks down what sites you can visit and does not allow access to my site, GitHub, or AirTable, so I can't do much Windows testing any longer.)
+For now I have been testing the site on an iMac (with a very large/wide screen), a MacBook Pro, an iPhone, an iPod Air, and at work on my Windows 10 PC. (For Project 2 I have been unable to do testing on a Windows PC since switching jobs as I now work for a major bank that severely locks down what sites you can visit and does not allow access to my site, GitHub, or AirTable, so I can't do much Windows testing any longer.)
 
-I've manually tested in Chrome, Safari, Mobile Safari, Internet Explorer 11, and Edge. It works well in all, except IE 11. I've fixed most of the problems (except those in IE11) and have started a list of all the browsers that need to be tested against. I'm not worrying about IE11 since Microsoft doesn't really support it, having replaced it with Edge, and now replacing Edge's web rendering with the same engine in Chrome and Safari, I'm told.
+I've manually tested in Chrome, Safari, Mobile Safari, Internet Explorer 11, and Edge. It worked well in all, except IE 11. I've fixed most of the problems (except those in IE11). I'm not worrying about IE11 since Microsoft doesn't really support it, having replaced it with Edge, and now they are replacing Edge's web rendering with the same engine used in Chrome and Safari.
 
-This manual testing has uncovered numerous bugs that I have fixed.  The few remaining are documented in the bugs.txt file along with some changes that will make the site look better on the biggest/smallest of screens.
+This manual testing has uncovered numerous bugs that I have fixed. I document bugs in the bugs.txt file along with some changes that will make the site look better on the biggest/smallest of screens.
 
 I test as follows: 
 
-1. Click on links in the navigation buttons at the left edge to make sure they go to the right pages. 
-2. Click back to return to the page I was at and click another button. Since the buttons are now all generated by a single source file this is much safer.
-3. Click any links in the page (email, telephone, social media, etc) and make sure they work.
-4. On devices supporting it (iPhone, iPad), change the screen from portrait to landscape and see if it adapts properly and is usable and looks ok both ways. 
-5. On desktop devices I resized the browser window horizontally and vertically to see if the page adapted properly.  I do this in the IDE preview window as well.
+1. Click on links in the navigation buttons to make sure they go to the correct pages. 
 
-In the bugs.txt and todo.txt files I have started tracking problems and changes to fix a few problems and to make the site look better.
+2. Click anoter button and repeat. Snce the buttons are now all generated by a single source file this is much safer and we are less likely to find broken links, especially across multiple pages.
+
+3. Click any links on the page (email, telephone, social media, etc) and make sure they work.
+
+4. On devices supporting it (iPhone, iPad), change the screen from portrait to landscape and see if it adapts properly and is usable and looks ok both ways. 
+
+5. On desktop devices I resized the browser window horizontally and vertically to see if the page size and layout adapted well.  I do this in the IDE preview window as well.
+
+In the bugs.txt and todo.txt files I am tracking problems and changes to fix problems and to make the site look better.
 
 I have found a few interesting bugs, such as IE11 not really working with the site at all, and the buttons disappearing on the iPhone 4 mobile Safari browser. These may be limits of older browsers with modern frameworks and what I can do may be limited therefore.  
 
+---
 ## DEPLOYMENT
 
 This site's Git repo is hosted on GitHub at https://github.com/IowaPen/WBD_FSD_Project2/ 
 
 I've used the GitHub Pages features to make the site available at https://iowapen.github.io/WBD_FSD_Project2/
 
-
+---
 ## CREDITS
 
-The basic structure for the site was inspired by the UCD Resume mini project in the CodeInstitute.Net Full Stack Developer Course but has been drastically modified and only bears a vague similarity now. 
+The basic structure for the site was inspired by the UCD Resume mini project in the CodeInstitute Full Stack Developer Course but has been drastically modified and only bears a vague similarity now. 
 
 
 ### CONTENT
 
-The site design was based off of the User Centered Design modules Resumé example that was created during the course. I've tweaked it quite a bit, but it had good bones and i used them as a starting point. The rest of the site uses no content that wasn't made by me, though I plan to use other content in the future. 
+- The content has all been collected or written by me, such as the various databases used for data to display on some of the pages. 
 
-The JavaScript frameworks have been mentioned elsewhere, as wells as the APIs and other resources used.
+- The JavaScript frameworks have been mentioned elsewhere, as wells as the APIs and other resources used.
 
 ### MEDIA
 
-- The logo for the pen club was created by Danielle Chargo of IowaPen East.
+- Nothing to cover here yet
 
 ### ACKNOWLEDGMENTS
 
-- The Color style for the menu button structure, layout and color gradients by how pen fans, especially ink fans, like to make swatchbooks of all their inks so they can have some idea of how they look. These are sort of like the paint sample swatches you get at paint stores.
+- The logo for the pen club was created by Danielle Chargo of IowaPen East.
 
-- The color gradients used on the menu buttons and in the heading text at the top comes from how some fountain pen inks have variation in the color (called shading and sheen) as you write.
-
-
+---
